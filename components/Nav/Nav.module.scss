@@ -1,0 +1,102 @@
+@import "../../styles/shared/color.scss";
+
+.wrapper {
+  width: 20%;
+  min-height: 200px;
+  margin-bottom: 5rem;
+}
+
+.list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 0.875rem;
+
+  li {
+    + li {
+      margin-top: 0.8rem;
+    }
+  }
+
+  a,
+  .toggle {
+    text-decoration: none;
+    color: $black;
+    display: block;
+    line-height: 2rem;
+    padding: 0 0.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba($pink, 0.5);
+    }
+  }
+}
+
+.toggle {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    transition: transform 0.2s ease-out;
+    width: 0;
+    height: 0;
+    border-top: 0.3rem solid transparent;
+    border-bottom: 0.3rem solid transparent;
+
+    border-left: 0.3rem solid rgba($dark, 0.75);
+  }
+
+  &.on::after {
+    transform: translateY(-50%) rotate(90deg);
+  }
+}
+
+.main {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid $dark;
+
+  a,
+  .toggle {
+    font-weight: 700;
+  }
+}
+
+.subnav {
+  border-left: solid 1px $pink;
+  margin-top: 0.5rem;
+  list-style: none;
+  margin-left: 0.5625rem;
+  padding-left: 0.5625rem;
+
+  a {
+    font-weight: 500;
+  }
+
+  .subnav {
+    border-color: $blue;
+
+    a {
+      font-weight: 300;
+    }
+  }
+
+  &.collections .subnav {
+    border-color: $green;
+  }
+}
+
+.subnav,
+.resource,
+.collection {
+  display: none;
+}
+
+.toggled {
+  display: block;
+}
