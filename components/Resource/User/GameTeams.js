@@ -50,9 +50,7 @@ const UserGameTeams = () => {
 
   return (
     <>
-      <h2 className={cx(appStyles.public, appStyles.private)}>
-        user.game_teams
-      </h2>
+      <h2 className={appStyles.private}>user.game_teams</h2>
       <p>
         Retrieve teams that the user belongs to in one or more games. The teams
         will be scoped to the user. This will throw an error if any of the
