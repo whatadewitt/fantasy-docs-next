@@ -36,6 +36,11 @@ h2 {
 a {
   color: $blue;
   text-decoration: none;
+
+  transition: color 0.2s ease-out;
+  &:hover {
+    color: darken($blue, 25%);
+  }
 }
 
 pre {

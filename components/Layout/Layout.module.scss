@@ -16,6 +16,7 @@
   font-size: 0.875rem;
   min-height: 100vh;
   margin-bottom: 5rem;
+  position: relative;
 }
 
 .arg {
@@ -34,6 +35,8 @@
 }
 
 .table {
+  margin-bottom: 0.75rem;
+
   .header {
     font-weight: 500;
   }
@@ -95,6 +98,10 @@
 
   &.inputErr {
     border-color: $pink;
+  }
+
+  .subresource & {
+    width: auto;
   }
 }
 
@@ -187,4 +194,20 @@
     -webkit-transform: scale(1);
     transform: scale(1);
   }
+}
+
+.filterOptions {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinnerDark > div {
+  background-color: $primary-dark;
 }

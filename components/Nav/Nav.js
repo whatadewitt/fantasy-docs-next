@@ -6,6 +6,8 @@ import { useRouter } from "next/router";
 import styles from "./Nav.module.scss";
 import cx from "classnames";
 
+import Trophy from "../../assets/images/trophy-solid.svg";
+
 const Nav = () => {
   const [subnavToggle, setSubnavToggle] = useState({
     resources: false,
@@ -24,7 +26,7 @@ const Nav = () => {
     if (new RegExp("resource").test(pathname)) {
       setSubnavToggle({ ...subnavToggle, resources: true });
     } else if (new RegExp("collection").test(pathname)) {
-      setSubnavToggle({ ...subnavToggle, collection: true });
+      setSubnavToggle({ ...subnavToggle, collections: true });
     }
   }, [pathname]);
 
@@ -51,31 +53,71 @@ const Nav = () => {
               [styles.toggled]: subnavToggle["resources"],
             })}
           >
-            <li>
+            <li
+              className={cx({
+                [styles.toggled]: new RegExp("/resource/game").test(pathname),
+              })}
+            >
               <Link href="/resource/game">Game</Link>
               <ul
                 className={cx(styles.subnav, styles.resource, styles.game, {
                   [styles.toggled]: new RegExp("/resource/game").test(pathname),
                 })}
               >
-                <li>
+                <li
+                  className={cx({
+                    [styles.active]: new RegExp("/resource/game/meta").test(
+                      pathname
+                    ),
+                  })}
+                >
                   <Link href="/resource/game/meta">Meta</Link>
                 </li>
-                <li>
+                <li
+                  className={cx({
+                    [styles.active]: new RegExp("/resource/game/leagues").test(
+                      pathname
+                    ),
+                  })}
+                >
                   <Link href="/resource/game/leagues">Leagues</Link>
                 </li>
-                <li>
+                <li
+                  className={cx({
+                    [styles.active]: new RegExp("/resource/game/players").test(
+                      pathname
+                    ),
+                  })}
+                >
                   <Link href="/resource/game/players">Players</Link>
                 </li>
-                <li>
+                <li
+                  className={cx({
+                    [styles.active]: new RegExp(
+                      "/resource/game/game_weeks"
+                    ).test(pathname),
+                  })}
+                >
                   <Link href="/resource/game/game_weeks">Game Weeks</Link>
                 </li>
-                <li>
+                <li
+                  className={cx({
+                    [styles.active]: new RegExp(
+                      "/resource/game/stat_categories"
+                    ).test(pathname),
+                  })}
+                >
                   <Link href="/resource/game/stat_categories">
                     Stat Categories
                   </Link>
                 </li>
-                <li>
+                <li
+                  className={cx({
+                    [styles.active]: new RegExp(
+                      "/resource/game/position_types"
+                    ).test(pathname),
+                  })}
+                >
                   <Link href="/resource/game/position_types">
                     Position Types
                   </Link>
@@ -87,7 +129,11 @@ const Nav = () => {
                 </li>
               </ul>
             </li>
-            <li>
+            <li
+              className={cx({
+                [styles.toggled]: new RegExp("/resource/league").test(pathname),
+              })}
+            >
               <Link href="/resource/league">League</Link>
               <ul
                 className={cx(styles.subnav, styles.resource, styles.league, {
@@ -124,7 +170,11 @@ const Nav = () => {
                 </li>
               </ul>
             </li>
-            <li>
+            <li
+              className={cx({
+                [styles.toggled]: new RegExp("/resource/player").test(pathname),
+              })}
+            >
               <Link href="/resource/player">Player</Link>
               <ul
                 className={cx(styles.subnav, styles.resource, styles.player, {
@@ -154,7 +204,11 @@ const Nav = () => {
                 </li>
               </ul>
             </li>
-            <li>
+            <li
+              className={cx({
+                [styles.toggled]: new RegExp("/resource/roster").test(pathname),
+              })}
+            >
               <Link href="/resource/roster">Roster</Link>
               <ul
                 className={cx(styles.subnav, styles.resource, styles.roster, {
@@ -168,7 +222,11 @@ const Nav = () => {
                 </li>
               </ul>
             </li>
-            <li>
+            <li
+              className={cx({
+                [styles.toggled]: new RegExp("/resource/team").test(pathname),
+              })}
+            >
               <Link href="/resource/team/">Team</Link>
               <ul
                 className={cx(styles.subnav, styles.resource, styles.team, {
@@ -195,7 +253,13 @@ const Nav = () => {
                 </li>
               </ul>
             </li>
-            <li>
+            <li
+              className={cx({
+                [styles.toggled]: new RegExp("/resource/transaction").test(
+                  pathname
+                ),
+              })}
+            >
               <Link href="/resource/transaction/">Transaction</Link>
               <ul
                 className={cx(
@@ -214,7 +278,11 @@ const Nav = () => {
                 </li>
               </ul>
             </li>
-            <li>
+            <li
+              className={cx({
+                [styles.toggled]: new RegExp("/resource/user").test(pathname),
+              })}
+            >
               <Link href="/resource/user">User</Link>
               <ul
                 className={cx(styles.subnav, styles.resource, styles.user, {
@@ -248,8 +316,14 @@ const Nav = () => {
               [styles.toggled]: subnavToggle["collections"],
             })}
           >
-            <li>
-              <a href="#">Games</a>
+            <li
+              className={cx({
+                [styles.toggled]: new RegExp("/collection/games").test(
+                  pathname
+                ),
+              })}
+            >
+              <Link href="/collection/games">Games</Link>
               <ul
                 className={cx(styles.subnav, styles.collection, styles.games, {
                   [styles.toggled]: new RegExp("/collection/games").test(
@@ -257,19 +331,34 @@ const Nav = () => {
                   ),
                 })}
               >
-                <li>
-                  <a href="#">Games</a>
+                <li
+                  className={cx({
+                    [styles.active]: new RegExp("/collection/games/fetch").test(
+                      pathname
+                    ),
+                  })}
+                >
+                  <Link href="/collection/games/fetch">Fetch</Link>
                 </li>
-                <li>
-                  <a href="#">User</a>
-                </li>
-                <li>
-                  <a href="#">User Games</a>
+                <li
+                  className={cx({
+                    [styles.active]: new RegExp("/collection/games/user").test(
+                      pathname
+                    ),
+                  })}
+                >
+                  <Link href="/collection/games/user">User</Link>
                 </li>
               </ul>
             </li>
-            <li>
-              <a href="#">Leagues</a>
+            <li
+              className={cx({
+                [styles.toggled]: new RegExp("/collection/leagues").test(
+                  pathname
+                ),
+              })}
+            >
+              <Link href="/collection/leagues">Leagues</Link>
               <ul
                 className={cx(
                   styles.subnav,
@@ -282,13 +371,25 @@ const Nav = () => {
                   }
                 )}
               >
-                <li>
-                  <a href="#">Leagues</a>
+                <li
+                  className={cx({
+                    [styles.active]: new RegExp(
+                      "/collection/leagues/fetch"
+                    ).test(pathname),
+                  })}
+                >
+                  <Link href="/collection/leagues/fetch">Fetch</Link>
                 </li>
               </ul>
             </li>
-            <li>
-              <a href="#">Players</a>
+            <li
+              className={cx({
+                [styles.toggled]: new RegExp("/collection/players").test(
+                  pathname
+                ),
+              })}
+            >
+              <Link href="/collection/players">Players</Link>
               <ul
                 className={cx(
                   styles.subnav,
@@ -301,19 +402,43 @@ const Nav = () => {
                   }
                 )}
               >
-                <li>
-                  <a href="#">Players</a>
+                <li
+                  className={cx({
+                    [styles.active]: new RegExp(
+                      "/collection/players/fetch"
+                    ).test(pathname),
+                  })}
+                >
+                  <Link href="/collection/players/fetch">Fetch</Link>
                 </li>
-                <li>
-                  <a href="#">League Players</a>
+                <li
+                  className={cx({
+                    [styles.active]: new RegExp(
+                      "/collection/players/league"
+                    ).test(pathname),
+                  })}
+                >
+                  <Link href="/collection/players/league">League</Link>
                 </li>
-                <li>
-                  <a href="#">Team Players</a>
+                <li
+                  className={cx({
+                    [styles.active]: new RegExp(
+                      "/collection/players/team"
+                    ).test(pathname),
+                  })}
+                >
+                  <Link href="/collection/players/team">Team</Link>
                 </li>
               </ul>
             </li>
-            <li>
-              <a href="#">Teams</a>
+            <li
+              className={cx({
+                [styles.toggled]: new RegExp("/collection/teams").test(
+                  pathname
+                ),
+              })}
+            >
+              <Link href="/collection/teams">Teams</Link>
               <ul
                 className={cx(styles.subnav, styles.collection, styles.teams, {
                   [styles.toggled]: new RegExp("/collection/teams").test(
@@ -321,19 +446,34 @@ const Nav = () => {
                   ),
                 })}
               >
-                <li>
-                  <a href="#">Teams</a>
+                <li
+                  className={cx({
+                    [styles.active]: new RegExp("/collection/teams/fetch").test(
+                      pathname
+                    ),
+                  })}
+                >
+                  <Link href="/collection/teams/fetch">Teams</Link>
                 </li>
-                <li>
-                  <a href="#">League Teams</a>
-                </li>
-                <li>
-                  <a href="#">User Game Teams</a>
+                <li
+                  className={cx({
+                    [styles.active]: new RegExp(
+                      "/collection/teams/league"
+                    ).test(pathname),
+                  })}
+                >
+                  <Link href="/collection/teams/league">League</Link>
                 </li>
               </ul>
             </li>
-            <li>
-              <a href="#">Transactions</a>
+            <li
+              className={cx({
+                [styles.toggled]: new RegExp("/collection/transactions").test(
+                  pathname
+                ),
+              })}
+            >
+              <Link href="/collection/transactions">Transactions</Link>
               <ul
                 className={cx(
                   styles.subnav,
@@ -346,8 +486,14 @@ const Nav = () => {
                   }
                 )}
               >
-                <li>
-                  <a href="#">Transactions</a>
+                <li
+                  className={cx({
+                    [styles.active]: new RegExp(
+                      "/collection/transactions/fetch"
+                    ).test(pathname),
+                  })}
+                >
+                  <Link href="/collection/transactions/fetch">Fetch</Link>
                 </li>
               </ul>
             </li>
@@ -380,6 +526,15 @@ const Nav = () => {
           >
             NPM
           </a>
+        </li>
+        <li className={styles.loginButton}>
+          <Link
+            href="/api/auth"
+            title="Authenticate with Yahoo!"
+            rel="noopener noreferrer"
+          >
+            Authenticate w/ Yahoo!
+          </Link>
         </li>
       </ul>
     </div>

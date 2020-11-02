@@ -68,18 +68,41 @@
 }
 
 .subnav {
-  border-left: solid 1px $pink;
   margin-top: 0.5rem;
   list-style: none;
-  margin-left: 0.5625rem;
   padding-left: 0.5625rem;
 
   a {
     font-weight: 500;
+    margin-left: 0.5625rem;
+  }
+
+  li {
+    // position: relative;
+    padding: 0.4rem 0;
+    border-left: solid 1px $pink;
+
+    + li {
+      margin-top: 0;
+    }
+
+    &.toggled {
+      border-width: 3px;
+      margin-left: -1px;
+    }
   }
 
   .subnav {
-    border-color: $blue;
+    margin-left: 0.5625rem;
+
+    li {
+      border-color: $blue;
+
+      &.active {
+        border-width: 3px;
+        margin-left: -1px;
+      }
+    }
 
     a {
       font-weight: 300;
@@ -89,6 +112,15 @@
   &.collections .subnav {
     border-color: $green;
   }
+
+  // .active::before {
+  //   position: absolute;
+  //   width: 2px;
+  //   height: 100%;
+  //   content: "";
+  //   left: -0.5625rem;
+  //   background: $blue;
+  // }
 }
 
 .subnav,
@@ -99,4 +131,22 @@
 
 .toggled {
   display: block;
+}
+
+.loginButton {
+  svg {
+    color: $white;
+    width: 1.5rem;
+  }
+
+  a {
+    background: $primary-dark;
+    color: $white;
+    padding: 1rem 0.75rem;
+    font-weight: 700;
+
+    &:hover {
+      background: $primary;
+    }
+  }
 }
