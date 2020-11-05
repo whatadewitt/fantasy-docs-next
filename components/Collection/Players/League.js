@@ -14,6 +14,7 @@ const PlayersLeague = () => {
   const [leagueKey, setLeagueKey] = useState(null);
   const [leagueKeyError, setLeagueKeyError] = useState(false);
 
+  const [filters, setFilters] = useState({});
   const [subresources, setSubresources] = useState([]);
 
   const [loading, setLoading] = useState(false);
@@ -33,8 +34,9 @@ const PlayersLeague = () => {
 
     setLoading(true);
 
-    const data = await api("/leagues/fetch", {
+    const data = await api("/players/leagues", {
       leagueKey,
+      filters,
       subresources,
     });
 
@@ -54,7 +56,7 @@ const PlayersLeague = () => {
   const updateSubresources = (key) => {
     const idx = subresources.findIndex((k) => k === key);
 
-    if (idx > 0) {
+    if (idx >= 0) {
       const newSubs = subresources;
       newSubs.splice(idx, 1);
       setSubresources([...newSubs]);
@@ -63,10 +65,17 @@ const PlayersLeague = () => {
     }
   };
 
+  const updateFilter = (key, val) => {
+    setFilters({
+      ...filters,
+      [key]: val,
+    });
+  };
+
   return (
     <>
       <h2 className={cx(appStyles.public, appStyles.private)}>
-        players.league
+        players.leagues
       </h2>
       <p>
         Retrieve information about multiple players across multiple leagues in a

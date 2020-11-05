@@ -12,6 +12,7 @@ export default function Layout({ children }) {
     <>
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
 
       <div className={styles.container}>
@@ -21,9 +22,8 @@ export default function Layout({ children }) {
           <Nav />
           <div className={styles.main}>{children}</div>
         </div>
-
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 }

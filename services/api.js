@@ -1,5 +1,5 @@
 export function api(endpoint, data) {
-  const BASE_URL = `https://www.fantasyanalyzer.local/api`;
+  const BASE_URL = "/api/yahoo"; //`https://www.fantasyanalyzer.local/api`;
 
   return fetch(`${BASE_URL}${endpoint}`, {
     method: "POST",

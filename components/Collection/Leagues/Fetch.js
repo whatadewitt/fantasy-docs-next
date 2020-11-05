@@ -54,7 +54,7 @@ const LeaguesFetch = () => {
   const updateSubresources = (key) => {
     const idx = subresources.findIndex((k) => k === key);
 
-    if (idx > 0) {
+    if (idx >= 0) {
       const newSubs = subresources;
       newSubs.splice(idx, 1);
       setSubresources([...newSubs]);
@@ -62,6 +62,10 @@ const LeaguesFetch = () => {
       setSubresources([...subresources, key]);
     }
   };
+
+  useEffect(() => {
+    console.log(subresources);
+  }, [subresources]);
 
   return (
     <>

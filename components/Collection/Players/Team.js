@@ -41,7 +41,7 @@ const PlayersTeam = () => {
 
     setLoading(true);
 
-    const data = await api("/players/team", {
+    const data = await api("/players/teams", {
       teamKey,
       filters,
       subresources,
@@ -63,7 +63,7 @@ const PlayersTeam = () => {
   const updateSubresources = (key) => {
     const idx = subresources.findIndex((k) => k === key);
 
-    if (idx > 0) {
+    if (idx >= 0) {
       const newSubs = subresources;
       newSubs.splice(idx, 1);
       setSubresources([...newSubs]);
@@ -74,7 +74,7 @@ const PlayersTeam = () => {
 
   return (
     <>
-      <h2 className={cx(appStyles.public, appStyles.private)}>players.team</h2>
+      <h2 className={cx(appStyles.public, appStyles.private)}>players.teams</h2>
       <p>
         Retrieve information about multiple players across multiple teams in a
         single request.

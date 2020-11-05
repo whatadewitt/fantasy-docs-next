@@ -7,7 +7,6 @@ export function user(state, action) {
       name: null,
       avatar: null,
       id: null,
-      auth: null,
     },
   };
 

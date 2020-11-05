@@ -1,59 +1,51 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { serialize } from "cookie";
+
 const YahooFantasy = require("yahoo-fantasy");
-const jwt = require("jsonwebtoken");
 const request = require("request");
 
 export default (req, res) => {
-  let user, accessToken, refreshToken;
-
-  const tokenCallback = ({ access_token, refresh_token }) => {
-    return new Promise((resolve, reject) => {
-      const options = {
-        url: "https://api.login.yahoo.com/openid/v1/userinfo",
-        method: "get",
-        json: true,
-        auth: {
-          bearer: access_token,
-        },
-      };
-
-      request(options, function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-          user = {
-            id: body.sub,
-            name: body.nickname,
-            avatar: body.profile_images.image64,
-          };
-          accessToken = access_token;
-          refreshToken = refresh_token;
-
-          return resolve();
-        }
-      });
-    });
-  };
-
   const yf = new YahooFantasy(
-    "dj0yJmk9S2dZMzNKb2FwMUQ2JmQ9WVdrOU1tczVURlEzVVRNbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTZm",
-    "cb411e31a8260277fbe2ec820f57997be7ff717f",
-    tokenCallback,
-    "https://c64db9cbef1f.ngrok.io/auth/callback"
+    process.env.YAHOO_CLIENT_ID ||
+      "dj0yJmk9S2dZMzNKb2FwMUQ2JmQ9WVdrOU1tczVURlEzVVRNbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTZm",
+    process.env.YAHOO_CLIENT_SECRET ||
+      "cb411e31a8260277fbe2ec820f57997be7ff717f",
+    null,
+    `https://${process.env.APP_URL}/auth/callback`
   );
 
-  yf.authCallback(req, (err) => {
+  yf.authCallback(req, (err, { access_token, refresh_token }) => {
     if (err) {
-      return res.json({ err });
+      return res.status(400).json({ err });
     }
 
-    return res.json({
-      user: user,
-      auth: jwt.sign(
-        {
-          accessToken,
-          refreshToken,
-        },
-        "yahoo-keyboard-kitty"
-      ),
+    const options = {
+      url: "https://api.login.yahoo.com/openid/v1/userinfo",
+      method: "get",
+      json: true,
+      auth: {
+        bearer: access_token,
+      },
+    };
+
+    request(options, function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        const user = {
+          id: body.sub,
+          name: body.nickname,
+          avatar: body.profile_images.image64,
+        };
+
+        console.log(user);
+        res.setHeader("Set-Cookie", [
+          serialize("accessToken", access_token, { path: "/", httpOnly: true }),
+          serialize("refreshToken", refresh_token, {
+            path: "/",
+            httpOnly: true,
+          }),
+        ]);
+
+        return res.json({ user: user });
+      }
     });
   });
 };

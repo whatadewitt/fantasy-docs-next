@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 
 import Layout from "../../components/Layout/Layout";
 import { useRouter } from "next/router";
@@ -11,24 +11,26 @@ import { Context } from "../../context";
 import { USER_LOG_IN } from "../../reducers/user";
 
 export default function Main() {
-  const { query, push } = useRouter();
+  const { query, replace } = useRouter();
   // const [err, ]
-  const { state, dispatch } = useContext(Context);
+  const { dispatch } = useContext(Context);
 
   useEffect(() => {
+    console.log(query);
     if (query.code) {
       fetch(`/api/auth/callback?code=${query.code}`)
         .then((data) => data.json())
-        .then(({ user: { name, id, avatar }, auth }) => {
+        .then(({ user: { name, id, avatar } }) => {
           dispatch({
             type: USER_LOG_IN,
             payload: {
               id,
               name,
               avatar,
-              auth,
             },
           });
+
+          replace(query.state);
         });
       // .catch(err => data.push("/error"))
     }

@@ -31,6 +31,7 @@ const LeagueMeta = () => {
 
     setLoading(true);
 
+    // TODO: better error handling
     const data = await api("/league/meta", {
       leagueKey,
     });
