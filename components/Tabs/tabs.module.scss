@@ -14,8 +14,10 @@
       margin-left: 0.625rem;
     }
 
-    &:hover {
-      border-bottom: 2px solid rgba($pink, 0.4);
+    @media (pointer: fine) {
+      &:hover {
+        border-bottom: 2px solid rgba($pink, 0.4);
+      }
     }
 
     &.active {

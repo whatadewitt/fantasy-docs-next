@@ -10,7 +10,15 @@ export default async (req, res) => {
     body,
   } = req;
 
-  console.log(body);
+  let accessToken;
+  const accessTokenCookie = req.headers?.cookie
+    .split("; ")
+    .find((c) => c.startsWith("accessToken"));
+
+  if (accessTokenCookie) {
+    yf.setUserToken(accessTokenCookie.split("=")[1]);
+  }
+
   if (slug.length < 2) {
     res.status(400);
     return res.json({ error: "invalid endpoint" });
@@ -29,7 +37,7 @@ export default async (req, res) => {
 
   const args = [];
 
-  if (keys) {
+  if (keys.length) {
     args.push(Object.values(keys));
   }
 
@@ -41,7 +49,7 @@ export default async (req, res) => {
     args.push(subresources);
   }
 
-  console.log(args);
+  console.log("X:", args);
   // cb - promise - case
   // 5 - 4 - i think this only happens with transactions.adddrop_player
   // 4 - 3 - would be key, filters, subs, callback

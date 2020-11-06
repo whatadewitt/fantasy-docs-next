@@ -3,20 +3,6 @@ const YahooFantasy = require("yahoo-fantasy");
 const request = require("request");
 
 export default (req, res) => {
-  // if (/localhost/.test(req.headers.host)) {
-  //   return res.json({
-  //     user: {
-  //       id: "123456789",
-  //       name: "dewberry-test",
-  //       avatar:
-  //         "https://secure.gravatar.com/avatar/d676f3728384b7f0ad416c4e9317fc6c?s=64",
-  //       // id: null,
-  //       // name: null,
-  //       // avatar: null,
-  //     },
-  //   });
-  // }
-
   let accessToken;
   const accessTokenCookie = req.headers?.cookie
     .split("; ")

@@ -18,7 +18,13 @@ export default function Main() {
   useEffect(() => {
     console.log(query);
     if (query.code) {
-      fetch(`/api/auth/callback?code=${query.code}`)
+      let params = `code=${query.code}`;
+
+      if (query.state) {
+        params += `&state=${query.state}`;
+      }
+
+      fetch(`/api/auth/callback?${params}`)
         .then((data) => data.json())
         .then(({ user: { name, id, avatar } }) => {
           dispatch({

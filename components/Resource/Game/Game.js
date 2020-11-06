@@ -51,7 +51,7 @@ const Game = () => (
           </div>
           <div>Retrieve information about a specific game</div>
         </div>
-        <div className={appStyles.row}>
+        {/* <div className={appStyles.row}>
           <div>
             <Link href="/resource/game/leagues">game.leagues</Link>
           </div>
@@ -62,7 +62,7 @@ const Game = () => (
             <Link href="/resource/game/players">game.players</Link>
           </div>
           <div>Retrieve information about player(s) in a specific game</div>
-        </div>
+        </div> */}
         <div className={appStyles.row}>
           <div>
             <Link href="/resource/game/game_weeks">game.game_weeks</Link>

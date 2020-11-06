@@ -1,13 +1,16 @@
+import { useState } from "react";
+
 import Head from "next/head";
 
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-
-import styles from "./Layout.module.scss";
-
 import Nav from "../Nav/Nav";
 
+import styles from "./Layout.module.scss";
+import cx from "classnames";
+
 export default function Layout({ children }) {
+  const [showNav, toggleNav] = useState(false);
   return (
     <>
       <Head>
@@ -16,11 +19,21 @@ export default function Layout({ children }) {
       </Head>
 
       <div className={styles.container}>
-        <Header />
+        <Header
+          toggleNav={() => {
+            toggleNav(!showNav);
+          }}
+        />
 
         <div className={styles.wrapper}>
-          <Nav />
-          <div className={styles.main}>{children}</div>
+          <Nav show={showNav} />
+          <div
+            className={cx(styles.main, {
+              [styles.navToggled]: showNav,
+            })}
+          >
+            {children}
+          </div>
         </div>
       </div>
       <Footer />

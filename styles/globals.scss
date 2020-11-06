@@ -16,6 +16,7 @@ body {
   position: relative;
 
   padding-top: 5rem;
+  overflow-x: hidden;
 }
 
 *,
@@ -40,8 +41,11 @@ a {
   text-decoration: none;
 
   transition: color 0.2s ease-out;
-  &:hover {
-    color: darken($blue, 25%);
+
+  @media (pointer: fine) {
+    &:hover {
+      color: darken($blue, 25%);
+    }
   }
 }
 

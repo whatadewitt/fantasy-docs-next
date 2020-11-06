@@ -21,8 +21,10 @@
     transition: color 0.3s ease-in-out;
     width: 1.25rem;
 
-    &:hover {
-      color: $pink;
+    @media (pointer: fine) {
+      &:hover {
+        color: $pink;
+      }
     }
 
     svg {

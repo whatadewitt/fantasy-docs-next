@@ -5,10 +5,8 @@ const request = require("request");
 
 export default (req, res) => {
   const yf = new YahooFantasy(
-    process.env.YAHOO_CLIENT_ID ||
-      "dj0yJmk9S2dZMzNKb2FwMUQ2JmQ9WVdrOU1tczVURlEzVVRNbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTZm",
-    process.env.YAHOO_CLIENT_SECRET ||
-      "cb411e31a8260277fbe2ec820f57997be7ff717f",
+    process.env.YAHOO_CLIENT_ID,
+    process.env.YAHOO_CLIENT_SECRET,
     null,
     `https://${process.env.APP_URL}/auth/callback`
   );
@@ -35,7 +33,6 @@ export default (req, res) => {
           avatar: body.profile_images.image64,
         };
 
-        console.log(user);
         res.setHeader("Set-Cookie", [
           serialize("accessToken", access_token, { path: "/", httpOnly: true }),
           serialize("refreshToken", refresh_token, {

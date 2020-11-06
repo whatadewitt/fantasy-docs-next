@@ -10,7 +10,7 @@ import Trophy from "../../assets/images/trophy-solid.svg";
 import { Context } from "../../context";
 import { USER_LOG_IN, USER_LOG_OUT } from "../../reducers/user";
 
-const Nav = () => {
+const Nav = ({ show }) => {
   const [subnavToggle, setSubnavToggle] = useState({
     resources: false,
     collections: false,
@@ -57,24 +57,27 @@ const Nav = () => {
   }, [pathname]);
 
   const logout = () => {
-    console.log("LOGOUT");
-    // fetch("/api/logout")
-    //   .then((response) => {
-    //     if (response.status !== 200) {
-    //       throw new Error(response.status);
-    //     }
+    fetch("/api/logout")
+      .then((response) => {
+        if (response.status !== 200) {
+          throw new Error(response.status);
+        }
 
-    //     return dispatch({
-    //       type: USER_LOG_OUT,
-    //     });
-    //   })
-    //   .catch((e) => {
-    //     console.log("user couldn't log out");
-    //   });
+        return dispatch({
+          type: USER_LOG_OUT,
+        });
+      })
+      .catch((e) => {
+        console.log("user couldn't log out");
+      });
   };
 
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={cx(styles.wrapper, {
+        [styles.show]: show,
+      })}
+    >
       <ul className={cx(styles.list, styles.main)}>
         <li>
           <Link href="/">Home</Link>
@@ -116,7 +119,7 @@ const Nav = () => {
                 >
                   <Link href="/resource/game/meta">Meta</Link>
                 </li>
-                <li
+                {/* <li
                   className={cx({
                     [styles.active]: new RegExp("/resource/game/leagues").test(
                       pathname
@@ -133,7 +136,7 @@ const Nav = () => {
                   })}
                 >
                   <Link href="/resource/game/players">Players</Link>
-                </li>
+                </li> */}
                 <li
                   className={cx({
                     [styles.active]: new RegExp(

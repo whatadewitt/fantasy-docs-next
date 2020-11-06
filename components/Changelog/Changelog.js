@@ -4,6 +4,30 @@ const Changelog = () => {
   return (
     <>
       <h2>Changelog</h2>
+      <h4>4.1.0</h4>
+      <ul>
+        <li>
+          Maybe would have made sense as a 5.0.0 as there may be breaking
+          changes, but I haven't been able to find any yet...
+        </li>
+        <li>
+          the authCallback() function will now return an object with the user's
+          access_token and refresh_token
+        </li>
+        <li>
+          the auth() function will accept a "state" string, allowing for state
+          persistence through the authentication process
+        </li>
+        <li>re-enabled the transactions.fetch() collection call</li>
+        <li>
+          cleaned up the "wavier_days" and "stat_categories" objects on league
+          resources
+        </li>
+        <li>
+          added deprecation warnings to the game.leagues and game.players
+          functions as they're not very useful in that context
+        </li>
+      </ul>
       <h4>4.0.0</h4>
       <ul>
         <li>

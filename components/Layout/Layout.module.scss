@@ -1,10 +1,19 @@
 @import "../../styles/shared/color.scss";
+@import "../../styles/shared/mixins.scss";
 
 .wrapper {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  width: 75rem;
+  width: 90vw;
+
+  @include respond-to("medium") {
+    width: 98vw;
+  }
+
+  @include respond-to("large") {
+    width: 75rem;
+  }
 }
 
 .container {
@@ -12,10 +21,25 @@
 }
 
 .main {
-  width: 75%;
   font-size: 0.875rem;
   margin-bottom: 5rem;
   position: relative;
+  transform: translateX(0%);
+
+  transition: transform 0.4s ease-in-out;
+
+  &.navToggled {
+    transform: translateX(100%);
+
+    @include respond-to("small") {
+      transform: translateX(65%);
+    }
+  }
+
+  @include respond-to("medium") {
+    transform: translateX(0%);
+    width: 75%;
+  }
 }
 
 .arg {

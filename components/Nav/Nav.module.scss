@@ -1,9 +1,30 @@
 @import "../../styles/shared/color.scss";
+@import "../../styles/shared/mixins.scss";
 
 .wrapper {
-  width: 20%;
-  min-height: 200px;
+  width: 75vw;
+  min-height: 100%;
   margin-bottom: 5rem;
+  transform: translateX(-110%);
+  position: fixed;
+  background: $white;
+  transition: transform 0.4s ease-in-out;
+
+  @include respond-to("small") {
+    width: 50vw;
+  }
+
+  &.show {
+    transform: translateX(0%);
+  }
+
+  @include respond-to("medium") {
+    width: 20%;
+    min-height: auto;
+    transform: translateX(0);
+    position: static;
+    background: transparent;
+  }
 }
 
 .list {
@@ -27,8 +48,10 @@
     border-radius: 0.25rem;
     cursor: pointer;
 
-    &:hover {
-      background-color: rgba($pink, 0.5);
+    @media (pointer: fine) {
+      &:hover {
+        background-color: rgba($pink, 0.5);
+      }
     }
   }
 
@@ -41,8 +64,10 @@
     font-weight: 700;
     cursor: pointer;
 
-    &:hover {
-      background: $primary;
+    @media (pointer: fine) {
+      &:hover {
+        background: $primary;
+      }
     }
 
     svg {
