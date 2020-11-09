@@ -19,11 +19,19 @@
   }
 
   @include respond-to("medium") {
-    width: 20%;
+    width: 15.3125rem;
     min-height: auto;
     transform: translateX(0);
     position: static;
     background: transparent;
+  }
+
+  @include respond-to("med-large") {
+    width: 25%;
+  }
+
+  @include respond-to("large") {
+    width: 20%;
   }
 }
 
