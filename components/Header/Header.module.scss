@@ -28,6 +28,10 @@
     height: 0.2rem;
     width: 2.2rem;
   }
+
+  @include respond-to("medium") {
+    display: none;
+  }
 }
 
 .logo {
