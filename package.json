@@ -22,7 +22,7 @@
     "react-syntax-highlighter": "^15.2.1",
     "request": "^2.88.2",
     "sass": "^1.27.0",
-    "yahoo-fantasy": "^4.1.0"
+    "yahoo-fantasy": "whatadewitt/yahoo-fantasy-sports-api#index-mjs-test"
   },
   "devDependencies": {
     "babel-plugin-inline-react-svg": "^1.1.1"
