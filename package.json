@@ -1,6 +1,6 @@
 {
   "name": "yahoo-docs-next",
-  "version": "0.1.0",
+  "version": "4.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -22,7 +22,7 @@
     "react-syntax-highlighter": "^15.2.1",
     "request": "^2.88.2",
     "sass": "^1.27.0",
-    "yahoo-fantasy": "whatadewitt/yahoo-fantasy-sports-api#index-mjs-test"
+    "yahoo-fantasy": "4.1.1"
   },
   "devDependencies": {
     "babel-plugin-inline-react-svg": "^1.1.1"

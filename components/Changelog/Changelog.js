@@ -4,6 +4,13 @@ const Changelog = () => {
   return (
     <>
       <h2>Changelog</h2>
+      <h4>4.1.1</h4>
+      <ul>
+        <li>
+          Small change to the way the resource and collection files are being
+          imported as it was causing issues on some hosts...
+        </li>
+      </ul>
       <h4>4.1.0</h4>
       <ul>
         <li>
