@@ -16,6 +16,8 @@ export default function Layout({ children }) {
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="shortcut icon" href="/favicon.ico" />
+
+        <meta property="og:image" content="/open-graph.png" />
       </Head>
 
       <div className={styles.container}>
