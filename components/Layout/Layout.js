@@ -11,6 +11,7 @@ import cx from "classnames";
 
 export default function Layout({ children }) {
   const [showNav, toggleNav] = useState(false);
+
   return (
     <>
       <Head>
@@ -18,6 +19,21 @@ export default function Layout({ children }) {
         <link rel="shortcut icon" href="/favicon.ico" />
 
         <meta property="og:image" content="/open-graph.png" />
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-01MY5QQ3HP"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-01MY5QQ3HP');`,
+          }}
+        />
       </Head>
 
       <div className={styles.container}>
