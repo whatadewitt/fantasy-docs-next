@@ -2,8 +2,8 @@ const YahooFantasy = require("yahoo-fantasy");
 
 export default async (req, res) => {
   const yf = new YahooFantasy(
-    "dj0yJmk9S2dZMzNKb2FwMUQ2JmQ9WVdrOU1tczVURlEzVVRNbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTZm",
-    "cb411e31a8260277fbe2ec820f57997be7ff717f"
+    process.env.YAHOO_CLIENT_ID,
+    process.env.YAHOO_CLIENT_SECRET
   );
   const {
     query: { slug },
@@ -37,7 +37,7 @@ export default async (req, res) => {
 
   const args = [];
 
-  if (keys.length) {
+  if (keys || keys.length ) {
     args.push(Object.values(keys));
   }
 
