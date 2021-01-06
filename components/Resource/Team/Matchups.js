@@ -156,7 +156,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const matchups = yf.team.matchups(
+  const matchups = await yf.team.matchups(
     team_key,
     [weeks] // optional
   );

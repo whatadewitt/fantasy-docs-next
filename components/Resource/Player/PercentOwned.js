@@ -132,7 +132,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const percent_owned = yf.player.percent_owned(player_key);
+  const percent_owned = await yf.player.percent_owned(player_key);
 } catch (e) {
   // handle error
 }

@@ -145,7 +145,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const position_types = yf.game.position_types(game_key);
+  const position_types = await yf.game.position_types(game_key);
 } catch (e) {
   // handle error
 }

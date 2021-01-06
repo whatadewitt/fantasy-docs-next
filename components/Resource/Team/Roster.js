@@ -140,7 +140,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const roster = yf.team.roster(team_key);
+  const roster = await yf.team.roster(team_key);
 } catch (e) {
   // handle error
 }

@@ -139,7 +139,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const settings = yf.league.settings(league_key);
+  const settings = await yf.league.settings(league_key);
 } catch (e) {
   // handle error
 }

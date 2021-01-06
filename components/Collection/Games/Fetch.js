@@ -225,7 +225,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const games = yf.games.fetch(
+  const games = await yf.games.fetch(
     [game_keys],
     [subresources], // optional
   );

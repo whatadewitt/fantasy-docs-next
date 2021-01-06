@@ -654,11 +654,11 @@ const Nav = ({ show }) => {
                 <li
                   className={cx({
                     [styles.active]: new RegExp(
-                      "/collection/teams/league"
+                      "/collection/teams/leagues"
                     ).test(pathname),
                   })}
                 >
-                  <Link href="/collection/teams/league">League</Link>
+                  <Link href="/collection/teams/leagues">Leagues</Link>
                 </li>
               </ul>
             </li>

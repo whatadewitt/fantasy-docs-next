@@ -217,7 +217,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const transactions = yf.transactions.fetch(
+  const transactions = await yf.transactions.fetch(
     [transaction_keys],
     {filters}, // optional
   );

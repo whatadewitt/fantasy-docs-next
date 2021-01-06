@@ -161,7 +161,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const scoreboard = yf.league.scoreboard(
+  const scoreboard = await yf.league.scoreboard(
     league_key,
     week // optional
   );

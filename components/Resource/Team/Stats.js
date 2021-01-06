@@ -135,7 +135,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const stats = yf.team.stats(team_key);
+  const stats = await yf.team.stats(team_key);
 } catch (e) {
   // handle error
 }

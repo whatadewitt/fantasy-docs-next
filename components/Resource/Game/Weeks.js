@@ -142,7 +142,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const game_weeks = yf.game.game_weeks(game_key);
+  const game_weeks = await yf.game.game_weeks(game_key);
 } catch (e) {
   // handle error
 }

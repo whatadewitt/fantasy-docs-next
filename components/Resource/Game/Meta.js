@@ -142,7 +142,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const meta = yf.game.meta(game_key);
+  const meta = await yf.game.meta(game_key);
 } catch (e) {
   // handle error
 }

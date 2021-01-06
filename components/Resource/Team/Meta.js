@@ -136,7 +136,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const meta = yf.team.meta(team_key);
+  const meta = await yf.team.meta(team_key);
 } catch (e) {
   // handle error
 }

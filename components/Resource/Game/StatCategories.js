@@ -142,7 +142,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const stat_categories = yf.game.stat_categories(game_key);
+  const stat_categories = await yf.game.stat_categories(game_key);
 } catch (e) {
   // handle error
 }

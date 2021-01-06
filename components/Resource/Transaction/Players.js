@@ -142,7 +142,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const players = yf.transaction.players(transaction_key);
+  const players = await yf.transaction.players(transaction_key);
 } catch (e) {
   // handle error
 }

@@ -188,7 +188,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const leagues = yf.game.leagues(game_key, league_key(s));
+  const leagues = await yf.game.leagues(game_key, league_key(s));
 } catch (e) {
   // handle error
 }

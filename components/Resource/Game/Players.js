@@ -185,7 +185,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const players = yf.game.players(game_key, player_key(s));
+  const players = await yf.game.players(game_key, player_key(s));
 } catch (e) {
   // handle error
 }

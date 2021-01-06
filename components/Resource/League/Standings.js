@@ -145,7 +145,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const standings = yf.league.standings(league_key);
+  const standings = await yf.league.standings(league_key);
 } catch (e) {
   // handle error
 }

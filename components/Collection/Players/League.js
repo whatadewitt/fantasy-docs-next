@@ -397,7 +397,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const players = yf.players.league(
+  const players = await yf.players.league(
     [league_keys],
     {filters}, // optional
     [subresources], // optional

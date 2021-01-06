@@ -269,7 +269,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const games = yf.games.user(
+  const games = await yf.games.user(
     {filters}, // optional
     [subresources], // optional
   );

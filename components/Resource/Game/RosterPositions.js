@@ -145,7 +145,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const meta = yf.game.roster_positions(game_key);
+  const meta = await yf.game.roster_positions(game_key);
 } catch (e) {
   // handle error
 }

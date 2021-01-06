@@ -201,7 +201,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const players = yf.league.players(
+  const players = await yf.league.players(
     league_key,
     [player_key(s)],
     week // optional

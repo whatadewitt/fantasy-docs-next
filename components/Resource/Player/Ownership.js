@@ -171,7 +171,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const meta = yf.player.meta(
+  const meta = await yf.player.meta(
     player_key,
     league_key
   );

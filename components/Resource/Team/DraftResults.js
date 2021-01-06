@@ -137,7 +137,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const draft_results = yf.team.draft_results(team_key);
+  const draft_results = await yf.team.draft_results(team_key);
 } catch (e) {
   // handle error
 }

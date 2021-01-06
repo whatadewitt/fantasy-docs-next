@@ -29,7 +29,7 @@ const Teams = () => (
         </div>
         <div className={appStyles.row}>
           <div>
-            <Link href="/collection/teams/league">teams.league</Link>
+            <Link href="/collection/teams/leagues">teams.leagues</Link>
           </div>
           <div>
             Retrieve information about multiple teams across multiple leagues

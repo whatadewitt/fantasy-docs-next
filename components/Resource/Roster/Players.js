@@ -179,7 +179,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const stats = yf.player.stats(
+  const stats = await yf.player.stats(
     player_key,
     date // optional
   );
