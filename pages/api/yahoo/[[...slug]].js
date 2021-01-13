@@ -27,9 +27,6 @@ export default async (req, res) => {
   const [resource, subresource] = slug;
   const { filters, subresources, ...keys } = body;
 
-  console.log(resource, subresource);
-  console.log(filters);
-  console.log(subresources);
   if (!yf[resource][subresource]) {
     res.status(400);
     return res.json({ error: "invalid endpoint" });
@@ -37,8 +34,8 @@ export default async (req, res) => {
 
   const args = [];
 
-  if (keys || keys.length ) {
-    args.push(Object.values(keys));
+  if (keys || keys.length) {
+    args.push(...Object.values(keys).filter((v) => v !== null));
   }
 
   if (filters) {
@@ -49,7 +46,6 @@ export default async (req, res) => {
     args.push(subresources);
   }
 
-  console.log("X:", args);
   // cb - promise - case
   // 5 - 4 - i think this only happens with transactions.adddrop_player
   // 4 - 3 - would be key, filters, subs, callback
@@ -58,7 +54,10 @@ export default async (req, res) => {
   // 2 - 1 - would be key or filters or subs, callback
   // 1 - 0 - callback only...
 
-  const data = await yf[resource][subresource](...args);
-
-  return res.json(data);
+  try {
+    const data = await yf[resource][subresource](...args);
+    return res.json(data);
+  } catch (e) {
+    return res.json(e);
+  }
 };

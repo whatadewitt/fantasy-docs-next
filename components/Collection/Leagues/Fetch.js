@@ -63,10 +63,6 @@ const LeaguesFetch = () => {
     }
   };
 
-  useEffect(() => {
-    console.log(subresources);
-  }, [subresources]);
-
   return (
     <>
       <h2 className={cx(appStyles.public, appStyles.private)}>leagues.fetch</h2>

@@ -11,8 +11,8 @@ const RosterPlayers = () => {
   const [activeTab, setActiveTab] = useState("description");
   const [response, setResponse] = useState(null);
 
-  const [playerKey, setPlayerKey] = useState(null);
-  const [playerKeyError, setPlayerKeyError] = useState(false);
+  const [teamKey, setTeamKey] = useState(null);
+  const [teamKeyError, setTeamKeyError] = useState(false);
 
   const [date, setDate] = useState(null);
 
@@ -25,16 +25,16 @@ const RosterPlayers = () => {
       return;
     }
 
-    if (null === playerKey) {
-      return setPlayerKeyError(true);
+    if (null === teamKey) {
+      return setTeamKeyError(true);
     } else {
-      setPlayerKeyError(false);
+      setTeamKeyError(false);
     }
 
     setLoading(true);
 
     const data = await api("/roster/players", {
-      playerKey,
+      teamKey,
       date,
     });
 
@@ -95,22 +95,22 @@ const RosterPlayers = () => {
             </div>
             <div className={appStyles.row}>
               <div className={cx(appStyles.arg, appStyles.required)}>
-                player_key
+                team_key
               </div>
               {activeTab === "tester" && (
                 <div>
                   <input
                     className={cx(appStyles.value, {
-                      [appStyles.inputErr]: playerKeyError,
+                      [appStyles.inputErr]: teamKeyError,
                     })}
                     type="text"
-                    onChange={(e) => updateInput(setPlayerKey, e.target.value)}
+                    onChange={(e) => updateInput(setTeamKey, e.target.value)}
                   ></input>
                 </div>
               )}
               <div>
-                The key for the player you'd like to query. Player key format:{" "}
-                {`{game_key}.p.{player_id}`}
+                The key for the team you'd like to query. Team key format:{" "}
+                {`{game_key}.l.{league_id}.t.{team_id}`}
               </div>
             </div>
             <div className={appStyles.row}>
@@ -119,7 +119,7 @@ const RosterPlayers = () => {
                 <div>
                   <input
                     className={cx(appStyles.value, {
-                      [appStyles.inputErr]: playerKeyError,
+                      [appStyles.inputErr]: teamKeyError,
                     })}
                     type="text"
                     onChange={(e) => updateInput(setDate, e.target.value)}
@@ -135,7 +135,7 @@ const RosterPlayers = () => {
 
           {activeTab === "tester" && (
             <div className={appStyles.submit}>
-              {playerKeyError && (
+              {teamKeyError && (
                 <div className={appStyles.err}>
                   Please enter a value for all required fields
                 </div>

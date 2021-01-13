@@ -5,7 +5,6 @@ export function api(endpoint, data) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      // TODO: auth
     },
     body: JSON.stringify(data),
   })
@@ -14,5 +13,6 @@ export function api(endpoint, data) {
     })
     .catch((err) => {
       console.error("Fetch Error :-S", err);
+      return err;
     });
 }
