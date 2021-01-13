@@ -4,6 +4,24 @@ const Changelog = () => {
   return (
     <>
       <h2>Changelog</h2>
+      <h4>4.1.2</h4>
+      <ul>
+        <li>
+          Fixed bug where "selected position" was no longer working due to a
+          change in the data format coming from Yahoo! (merge{" "}
+          <a
+            href="https://github.com/whatadewitt/yahoo-fantasy-sports-api/pull/69"
+            target="_blank"
+          >
+            PR #69
+          </a>
+          ) (Thanks{" "}
+          <a href="https://github.com/brisberg" target="_blank">
+            brisberg
+          </a>
+          )
+        </li>
+      </ul>
       <h4>4.1.1</h4>
       <ul>
         <li>
