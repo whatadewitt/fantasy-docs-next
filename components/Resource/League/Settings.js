@@ -31,7 +31,7 @@ const LeagueSettings = () => {
 
     setLoading(true);
 
-    const data = await api("/league/meta", {
+    const data = await api("/league/settings", {
       leagueKey,
     });
 
