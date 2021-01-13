@@ -35,6 +35,7 @@ const TeamMatchups = () => {
 
     const data = await api("/team/matchups", {
       teamKey,
+      week,
     });
 
     setResponse(data);
