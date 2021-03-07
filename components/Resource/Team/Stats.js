@@ -14,6 +14,8 @@ const TeamStats = () => {
   const [teamKey, setTeamKey] = useState(null);
   const [teamKeyError, setTeamKeyError] = useState(false);
 
+  const [week, setWeek] = useState(null);
+
   const [loading, setLoading] = useState(false);
 
   const makeAPICall = async (e) => {
@@ -33,6 +35,7 @@ const TeamStats = () => {
 
     const data = await api("/team/stats", {
       teamKey,
+      week,
     });
 
     setResponse(data);
@@ -85,6 +88,25 @@ const TeamStats = () => {
               <div>
                 The key for the team you'd like to query. Team key format:{" "}
                 {`{game_key}.l.{league_id}.t.{team_id}`}
+              </div>
+            </div>
+            <div className={appStyles.row}>
+              <div className={cx(appStyles.arg)}>week / date</div>
+              {activeTab === "tester" && (
+                <div>
+                  <input
+                    className={cx(appStyles.value, {
+                      [appStyles.inputErr]: teamKeyError, // TODO: fix this here and on player.stats
+                    })}
+                    type="text"
+                    onChange={(e) => updateInput(setWeek, e.target.value)}
+                  ></input>
+                </div>
+              )}
+              <div>
+                The week number or date (YYYY-MM-DD) you'd like the stats for,
+                if nothing specified you'll get the full season statistical
+                information.
               </div>
             </div>
           </div>

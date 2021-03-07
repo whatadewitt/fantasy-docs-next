@@ -35,7 +35,7 @@ const LeaguePlayers = () => {
     }
 
     // because of hooks...
-    if (null === playerKeys || null === gameKey) {
+    if (null === playerKeys || null === leagueKey) {
       return;
     }
 

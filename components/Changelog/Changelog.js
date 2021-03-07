@@ -4,6 +4,21 @@ const Changelog = () => {
   return (
     <>
       <h2>Changelog</h2>
+      <h4>4.1.3</h4>
+      <ul>
+        <li>
+          Fixed a bug where Yahoo! apparently no longer requires `;type=week`
+          when building a URL for team.stats and player.stats, leading to no
+          stats coming back for those resources (
+          <a
+            href="https://github.com/whatadewitt/yahoo-fantasy-sports-api/issues/70"
+            target="_blank"
+          >
+            Issue #70
+          </a>
+          )
+        </li>
+      </ul>
       <h4>4.1.2</h4>
       <ul>
         <li>
