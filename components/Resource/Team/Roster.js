@@ -55,11 +55,6 @@ const TeamRoster = () => {
         Retrieve a team roster. Users must be authenticated and a member of the
         league to query against teams of private leagues.
       </p>
-      <p>
-        <em>
-          <strong>TODO:</strong> add support for the "week" parameter
-        </em>
-      </p>
 
       <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
 

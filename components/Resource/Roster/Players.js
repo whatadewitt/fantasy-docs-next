@@ -114,7 +114,7 @@ const RosterPlayers = () => {
               </div>
             </div>
             <div className={appStyles.row}>
-              <div className={cx(appStyles.arg)}>date</div>
+              <div className={cx(appStyles.arg)}>date (week)</div>
               {activeTab === "tester" && (
                 <div>
                   <input
@@ -128,7 +128,9 @@ const RosterPlayers = () => {
               )}
               <div>
                 The date you'd like the roster for, if no date is specified
-                you'll get the roster for today. Date format: YYYY-MM-DD
+                you'll get the roster for today. Date format: YYYY-MM-DD,
+                alternatively you can specify a week number and the API will get
+                the roster for that week.
               </div>
             </div>
           </div>
