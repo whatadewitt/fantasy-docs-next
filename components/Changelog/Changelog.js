@@ -4,6 +4,29 @@ const Changelog = () => {
   return (
     <>
       <h2>Changelog</h2>
+      <h4>4.1.4</h4>
+      <ul>
+        <li>
+          Fixed a bug where the response from the token refresh was not being
+          included in the promise chain. (merge{" "}
+          <a
+            href="https://github.com/whatadewitt/yahoo-fantasy-sports-api/pull/78"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            PR #78
+          </a>
+          ) (Thanks{" "}
+          <a
+            href="https://github.com/connor4312"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            connor4312
+          </a>
+          !)
+        </li>
+      </ul>
       <h4>4.1.3</h4>
       <ul>
         <li>
@@ -13,6 +36,7 @@ const Changelog = () => {
           <a
             href="https://github.com/whatadewitt/yahoo-fantasy-sports-api/issues/70"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Issue #70
           </a>
@@ -27,11 +51,16 @@ const Changelog = () => {
           <a
             href="https://github.com/whatadewitt/yahoo-fantasy-sports-api/pull/69"
             target="_blank"
+            rel="noopener noreferrer"
           >
             PR #69
           </a>
           ) (Thanks{" "}
-          <a href="https://github.com/brisberg" target="_blank">
+          <a
+            href="https://github.com/brisberg"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             brisberg
           </a>
           )
