@@ -4,6 +4,29 @@ const Changelog = () => {
   return (
     <>
       <h2>Changelog</h2>
+      <h4>4.1.5</h4>
+      <ul>
+        <li>
+          Fixed a bug where certain league settings were not loading properly
+          for some older leagues. (merge{" "}
+          <a
+            href="https://github.com/whatadewitt/yahoo-fantasy-sports-api/pull/80"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            PR #80
+          </a>
+          (Thanks{" "}
+          <a
+            href="https://github.com/connor4312"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            connor4312
+          </a>
+          !)
+        </li>
+      </ul>
       <h4>4.1.4</h4>
       <ul>
         <li>
