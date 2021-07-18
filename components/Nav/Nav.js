@@ -478,21 +478,21 @@ const Nav = ({ show }) => {
                 </li>
                 <li
                   className={cx({
-                    [styles.toggled]: new RegExp("/resource/user/leagues").test(
+                    [styles.toggled]: new RegExp("/resource/user/game_leagues").test(
                       pathname
                     ),
                   })}
                 >
-                  <Link href="/resource/user/leagues">Leagues</Link>
+                  <Link href="/resource/user/game_leagues">Leagues</Link>
                 </li>
                 <li
                   className={cx({
-                    [styles.toggled]: new RegExp("/resource/user/teams").test(
+                    [styles.toggled]: new RegExp("/resource/user/game_teams").test(
                       pathname
                     ),
                   })}
                 >
-                  <Link href="/resource/user/teams">Teams</Link>
+                  <Link href="/resource/user/game_teams">Teams</Link>
                 </li>
               </ul>
             </li>
