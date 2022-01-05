@@ -92,7 +92,7 @@ const PlayerStats = () => {
               </div>
             </div>
             <div className={appStyles.row}>
-              <div className={cx(appStyles.arg)}>week</div>
+              <div className={cx(appStyles.arg)}>date (week)</div>
               {activeTab === "tester" && (
                 <div>
                   <input
@@ -105,8 +105,11 @@ const PlayerStats = () => {
                 </div>
               )}
               <div>
-                The week number you'd like the stats for, if no week specified
-                you'll get the full season statistical information.
+                The date you'd like the players' stats for, if no date is
+                specified you'll get the full season stats. Date format:
+                YYYY-MM-DD, alternatively you can specify a week number and the
+                API will get the players' stats for that week if the game is
+                setup with weekly scoring.
               </div>
             </div>
           </div>

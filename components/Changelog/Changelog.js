@@ -4,6 +4,50 @@ const Changelog = () => {
   return (
     <>
       <h2>Changelog</h2>
+      <h4>4.2.0</h4>
+      <ul>
+        <li>
+          Fixed a bug where querying player stats for a given week wasn't
+          working.
+        </li>
+        <li>
+          Updated the `player.stats` function to accept a week OR a date (format
+          `yyyy-mm-dd`) as the 2nd param
+        </li>
+        <li>
+          Fixed a bug that would cause the function to fail silently if trying
+          to request stats for a given `week` for players outside of the NFL
+          (for this you can just get the weeks from the game settings and make
+          multiple queries for each day of the week).
+        </li>
+        <li>
+          Fixes{" "}
+          <a
+            href="https://github.com/whatadewitt/yahoo-fantasy-sports-api/issues/79"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Issue #79
+          </a>{" "}
+          (Big thanks to{" "}
+          <a
+            href="https://github.com/jimweigandt"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            jimweigandt
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://github.com/rdbaron"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            rdbaron
+          </a>{" "}
+          for the help finding / debugging the issue)
+        </li>
+      </ul>
       <h4>4.1.5</h4>
       <ul>
         <li>
