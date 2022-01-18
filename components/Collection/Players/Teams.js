@@ -113,8 +113,8 @@ const PlayersTeam = () => {
                 </div>
               )}
               <div>
-                The key(s) for the player(s) you'd like to query. League key
-                format: {`{game_key}.l.{league_id}.t.{team_id}`}
+                The key(s) for the team(s) you'd like to query. Team key format:{" "}
+                {`{game_key}.l.{league_id}.t.{team_id}`}
               </div>
             </div>
           </div>
@@ -267,7 +267,7 @@ yf.setUserToken(
 
 // promise based
 try {
-  const players = await yf.players.league(
+  const players = await yf.players.teams(
     [league_keys],
     {filters}, // optional
     [subresources], // optional
@@ -277,8 +277,8 @@ try {
 }
 
 // callback based
-yf.players.league(
-  [league_keys], 
+yf.players.teams(
+  [team_keys], 
   {filters}, // optional
   [subresources], // optional
   callbackFn
@@ -294,8 +294,7 @@ yf.players.league(
                       league_key: "328.l.34014",
                       league_id: "34014",
                       name: "Freddy Beach Baseball",
-                      url:
-                        "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014",
+                      url: "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014",
                       league_chat_id: "",
                       draft_status: "postdraft",
                       num_teams: 12,
@@ -333,8 +332,7 @@ yf.players.league(
                           uniform_number: "19",
                           display_position: "1B,OF",
                           headshot: {
-                            url:
-                              "http://l.yimg.com/iu/api/res/1.2/9V26x2764H1l8ST0R6eajg--/YXBwaWQ9eXZpZGVvO…g--/http://l.yimg.com/j/assets/i/us/sp/v/mlb/players_l/20130405/7264.1.jpg",
+                            url: "http://l.yimg.com/iu/api/res/1.2/9V26x2764H1l8ST0R6eajg--/YXBwaWQ9eXZpZGVvO…g--/http://l.yimg.com/j/assets/i/us/sp/v/mlb/players_l/20130405/7264.1.jpg",
                             size: "small",
                           },
                           is_undroppable: "0",
@@ -364,8 +362,7 @@ yf.players.league(
                           uniform_number: "9",
                           display_position: "OF",
                           headshot: {
-                            url:
-                              "http://l.yimg.com/iu/api/res/1.2/wkPExRUb.XyjBpPKmHWUFQ--/YXBwaWQ9eXZpZGVvO…g--/http://l.yimg.com/j/assets/i/us/sp/v/mlb/players_l/20130405/8644.1.jpg",
+                            url: "http://l.yimg.com/iu/api/res/1.2/wkPExRUb.XyjBpPKmHWUFQ--/YXBwaWQ9eXZpZGVvO…g--/http://l.yimg.com/j/assets/i/us/sp/v/mlb/players_l/20130405/8644.1.jpg",
                             size: "small",
                           },
                           is_undroppable: "0",
@@ -395,8 +392,7 @@ yf.players.league(
                           uniform_number: "17",
                           display_position: "OF",
                           headshot: {
-                            url:
-                              "http://l.yimg.com/iu/api/res/1.2/vpGz9xTjYIf.3trxbXZvgw--/YXBwaWQ9eXZpZGVvO…g--/http://l.yimg.com/j/assets/i/us/sp/v/mlb/players_l/20130405/7498.1.jpg",
+                            url: "http://l.yimg.com/iu/api/res/1.2/vpGz9xTjYIf.3trxbXZvgw--/YXBwaWQ9eXZpZGVvO…g--/http://l.yimg.com/j/assets/i/us/sp/v/mlb/players_l/20130405/7498.1.jpg",
                             size: "small",
                           },
                           is_undroppable: "0",
@@ -426,8 +422,7 @@ yf.players.league(
                           uniform_number: "4",
                           display_position: "OF",
                           headshot: {
-                            url:
-                              "http://l.yimg.com/iu/api/res/1.2/gTI1sn2_l8sDR3B_epsvpA--/YXBwaWQ9eXZpZGVvO…g--/http://l.yimg.com/j/assets/i/us/sp/v/mlb/players_l/20130405/6983.1.jpg",
+                            url: "http://l.yimg.com/iu/api/res/1.2/gTI1sn2_l8sDR3B_epsvpA--/YXBwaWQ9eXZpZGVvO…g--/http://l.yimg.com/j/assets/i/us/sp/v/mlb/players_l/20130405/6983.1.jpg",
                             size: "small",
                           },
                           is_undroppable: "0",
@@ -457,8 +452,7 @@ yf.players.league(
                           uniform_number: "5",
                           display_position: "OF",
                           headshot: {
-                            url:
-                              "http://l.yimg.com/iu/api/res/1.2/CAaVkp7i4ZdyshkVpkk5Kw--/YXBwaWQ9eXZpZGVvO…g--/http://l.yimg.com/j/assets/i/us/sp/v/mlb/players_l/20130405/7934.1.jpg",
+                            url: "http://l.yimg.com/iu/api/res/1.2/CAaVkp7i4ZdyshkVpkk5Kw--/YXBwaWQ9eXZpZGVvO…g--/http://l.yimg.com/j/assets/i/us/sp/v/mlb/players_l/20130405/7934.1.jpg",
                             size: "small",
                           },
                           is_undroppable: "0",

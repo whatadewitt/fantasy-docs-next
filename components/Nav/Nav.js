@@ -614,7 +614,7 @@ const Nav = ({ show }) => {
                     ).test(pathname),
                   })}
                 >
-                  <Link href="/collection/players/league">League</Link>
+                  <Link href="/collection/players/leagues">Leagues</Link>
                 </li>
                 <li
                   className={cx({
@@ -623,7 +623,7 @@ const Nav = ({ show }) => {
                     ).test(pathname),
                   })}
                 >
-                  <Link href="/collection/players/team">Team</Link>
+                  <Link href="/collection/players/teams">Teams</Link>
                 </li>
               </ul>
             </li>
