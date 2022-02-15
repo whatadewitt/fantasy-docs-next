@@ -1,20 +1,17 @@
-const withTM = require("next-transpile-modules")(["react-syntax-highlighter"]);
+// const withTM = require("next-transpile-modules")(["react-syntax-highlighter"]);
 
-module.exports = withTM({
+module.exports = { //withTM({
   cssModules: true,
   cssLoaderOptions: {
     importLoaders: 2,
     localIdentName: "[local]___[hash:base64:5]",
   },
-  webpack: (config, options) => {
+  webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,
-      issuer: {
-        test: /\.(js|ts)x?$/,
-      },
-      use: ["@svgr/webpack"],
-    });
+      use: ['@svgr/webpack'],
+    })
 
     return config;
   },
-});
+}; //);

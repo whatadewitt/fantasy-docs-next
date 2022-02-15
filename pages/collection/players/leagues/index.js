@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 import Layout from "../../../../components/Layout/Layout";
-import PlayersLeague from "../../../../components/Collection/Players/League";
+import PlayersLeague from "../../../../components/Collection/Players/Leagues";
 
 export default function Main() {
   return (
