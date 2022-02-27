@@ -34,7 +34,7 @@ const TeamsFetch = () => {
     setLoading(true);
 
     const data = await api("/teams/fetch", {
-      teamKey,
+      teamKey: teamKey.replace(" ", "").split(","),
       subresources,
     });
 

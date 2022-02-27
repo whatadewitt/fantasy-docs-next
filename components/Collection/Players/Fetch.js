@@ -34,7 +34,7 @@ const LeaguesFetch = () => {
     setLoading(true);
 
     const data = await api("/players/fetch", {
-      playerKey,
+      playerKey: playerKey.replace(" ", "").split(","),
       subresources,
     });
 

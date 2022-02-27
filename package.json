@@ -3,6 +3,7 @@
   "version": "4.2.0",
   "private": true,
   "scripts": {
+    "dev:local": "NODE_OPTIONS='--inspect' node server.js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
@@ -23,7 +24,7 @@
     "react-syntax-highlighter": "^15.2.1",
     "request": "^2.88.2",
     "sass": "^1.27.0",
-    "yahoo-fantasy": "4.2.0"
+    "yahoo-fantasy": "^4.2.0"
   },
   "devDependencies": {
     "babel-plugin-inline-react-svg": "^2.0.1"

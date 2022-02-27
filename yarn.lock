@@ -1419,11 +1419,6 @@
     "path-type" "^4.0.0"
     "yaml" "^1.10.0"
 
-"crypto-js@~3.1.9-1":
-  "integrity" "sha1-/aGedh/Ad+Af+/3G6f38WeiAbNg="
-  "resolved" "https://registry.npmjs.org/crypto-js/-/crypto-js-3.1.9-1.tgz"
-  "version" "3.1.9-1"
-
 "css-select@^4.1.3":
   "integrity" "sha512-/aUslKhzkTNCQUB2qTX84lVmfia9NyjP3WpDGtj/WxhwBzWBYUV3DgUpurHTme8UTPcPlAD1DJ+b0nN/t50zDQ=="
   "resolved" "https://registry.npmjs.org/css-select/-/css-select-4.2.1.tgz"
@@ -1583,11 +1578,6 @@
   "resolved" "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz"
   "version" "1.0.5"
 
-"esm@^3.2.25":
-  "integrity" "sha512-U1suiZ2oDVWv4zPO56S0NcR5QriEahGtdN2OR6FiOG4WJvcjBVFB0qI4+eKoWFH483PKGuLuu6V8Z4T5g63UVA=="
-  "resolved" "https://registry.npmjs.org/esm/-/esm-3.2.25.tgz"
-  "version" "3.2.25"
-
 "esutils@^2.0.2":
   "integrity" "sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g=="
   "resolved" "https://registry.npmjs.org/esutils/-/esutils-2.0.3.tgz"
@@ -1626,11 +1616,6 @@
   "version" "7.0.1"
   dependencies:
     "to-regex-range" "^5.0.1"
-
-"follow-redirects@^1.13.0":
-  "integrity" "sha512-1x0S9UVJHsQprFcEC/qnNzBLcIxsjAV905f/UkQxbclCsoTWlacCNOpQa/anodLl2uaEKFhfWOvM2Qg77+15zA=="
-  "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.8.tgz"
-  "version" "1.14.8"
 
 "forever-agent@~0.6.1":
   "integrity" "sha1-+8cfDEGt6zf5bFd60e1C2P2sypE="
@@ -2115,14 +2100,6 @@
   "resolved" "https://registry.npmjs.org/oauth-sign/-/oauth-sign-0.9.0.tgz"
   "version" "0.9.0"
 
-"oauth-signature@^1.5.0":
-  "integrity" "sha512-lF0vEK03oZoE4svZzfp8HVdDC5lPwTeC3DBotRHBbFsA13jHS4kf9CMHRORGxR0Fseo6k25PHBvIJczdYwuflw=="
-  "resolved" "https://registry.npmjs.org/oauth-signature/-/oauth-signature-1.5.0.tgz"
-  "version" "1.5.0"
-  dependencies:
-    "crypto-js" "~3.1.9-1"
-    "uri-js" "^3.0.2"
-
 "object-assign@^4.1.1":
   "integrity" "sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM="
   "resolved" "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz"
@@ -2605,13 +2582,6 @@
   "resolved" "https://registry.npmjs.org/unicode-property-aliases-ecmascript/-/unicode-property-aliases-ecmascript-2.0.0.tgz"
   "version" "2.0.0"
 
-"uri-js@^3.0.2":
-  "integrity" "sha1-+QuFhQf4HepNz7s8TD2/orVX+qo="
-  "resolved" "https://registry.npmjs.org/uri-js/-/uri-js-3.0.2.tgz"
-  "version" "3.0.2"
-  dependencies:
-    "punycode" "^2.1.0"
-
 "uri-js@^4.2.2":
   "integrity" "sha512-B0yRTzYdUCCn9n+F4+Gh4yIDtMQcaJsmYBDsTSG8g/OejKBodLQ2IHfN3bM7jUsRXndopT7OIXWdYqc1fjmV6g=="
   "resolved" "https://registry.npmjs.org/uri-js/-/uri-js-4.4.0.tgz"
@@ -2635,11 +2605,6 @@
   "integrity" "sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A=="
   "resolved" "https://registry.npmjs.org/uuid/-/uuid-3.4.0.tgz"
   "version" "3.4.0"
-
-"uuid@^8.3.0":
-  "integrity" "sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg=="
-  "resolved" "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz"
-  "version" "8.3.2"
 
 "verror@1.10.0":
   "integrity" "sha1-OhBcoXBTr1XW4nDB+CiGguGNpAA="
@@ -2670,9 +2635,8 @@
   "resolved" "https://registry.npmjs.org/xtend/-/xtend-4.0.2.tgz"
   "version" "4.0.2"
 
-"yahoo-fantasy@4.2.0":
-  "integrity" "sha512-hnFMftAtek6v3aWjfXyTUJvZfdsMNDrzrPqJzDnau98bGtmTfqJEFOgnsCAT2mu0HwmqmJquYG+tP1aAC/kd5A=="
-  "resolved" "https://registry.npmjs.org/yahoo-fantasy/-/yahoo-fantasy-4.2.0.tgz"
+"yahoo-fantasy@file:../yahoo-fantasy-sports-api":
+  "resolved" "file:../yahoo-fantasy-sports-api"
   "version" "4.2.0"
   dependencies:
     "esm" "^3.2.25"

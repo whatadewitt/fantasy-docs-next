@@ -42,7 +42,7 @@ const PlayersTeam = () => {
     setLoading(true);
 
     const data = await api("/players/teams", {
-      teamKey,
+      teamKey: teamKey.replace(" ", "").split(","),
       filters,
       subresources,
     });

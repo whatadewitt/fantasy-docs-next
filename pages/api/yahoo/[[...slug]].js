@@ -46,6 +46,8 @@ export default async (req, res) => {
     args.push(subresources);
   }
 
+  console.log(args);
+
   // cb - promise - case
   // 5 - 4 - i think this only happens with transactions.adddrop_player
   // 4 - 3 - would be key, filters, subs, callback

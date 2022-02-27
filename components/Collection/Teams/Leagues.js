@@ -34,7 +34,7 @@ const TeamsLeague = () => {
     setLoading(true);
 
     const data = await api("/teams/leagues", {
-      leagueKey,
+      leagueKey: leagueKey.replace(" ", "").split(","),
       subresources,
     });
 

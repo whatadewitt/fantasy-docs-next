@@ -34,7 +34,7 @@ const TransactionsFetch = () => {
     setLoading(true);
 
     const data = await api("/transactions/fetch", {
-      transactionKey,
+      transactionKey: transactionKey.replace(" ", "").split(","),
       filters,
     });
 

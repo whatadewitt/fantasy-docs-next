@@ -34,7 +34,7 @@ const GamesFetch = () => {
     setLoading(true);
 
     const data = await api("/games/fetch", {
-      gameKey,
+      gameKey: gameKey.replace(" ", "").split(","),
       subresources,
     });
 
