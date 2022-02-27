@@ -610,7 +610,7 @@ const Nav = ({ show }) => {
                 <li
                   className={cx({
                     [styles.active]: new RegExp(
-                      "/collection/players/league"
+                      "/collection/players/leagues"
                     ).test(pathname),
                   })}
                 >
@@ -619,7 +619,7 @@ const Nav = ({ show }) => {
                 <li
                   className={cx({
                     [styles.active]: new RegExp(
-                      "/collection/players/team"
+                      "/collection/players/teams"
                     ).test(pathname),
                   })}
                 >
