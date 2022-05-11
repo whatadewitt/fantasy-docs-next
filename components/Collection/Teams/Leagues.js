@@ -264,8 +264,7 @@ yf.teams.league(
                       league_key: "328.l.34014",
                       league_id: "34014",
                       name: "Freddy Beach Baseball",
-                      url:
-                        "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014",
+                      url: "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014",
                       league_chat_id: "",
                       draft_status: "postdraft",
                       num_teams: 12,
@@ -290,8 +289,7 @@ yf.teams.league(
                           team_key: "328.l.34014.t.1",
                           team_id: "1",
                           name: "ChicksDigTheLongBall",
-                          url:
-                            "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/1",
+                          url: "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/1",
                           team_logo:
                             "http://l.yimg.com/dh/ap/fantasy/img/mlb/icon_6_lg.gif",
                           waiver_priority: 4,
@@ -329,8 +327,7 @@ yf.teams.league(
                           team_key: "328.l.34014.t.2",
                           team_id: "2",
                           name: "SALEBOAT",
-                          url:
-                            "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/2",
+                          url: "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/2",
                           team_logo: "https://i.imgur-ysports.com/k9xxNC8y.jpg",
                           waiver_priority: 8,
                           number_of_moves: "30",
@@ -366,8 +363,7 @@ yf.teams.league(
                           team_key: "328.l.34014.t.3",
                           team_id: "3",
                           name: "Human Centipuig",
-                          url:
-                            "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/3",
+                          url: "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/3",
                           team_logo:
                             "http://l.yimg.com/dh/ap/fantasy/img/mlb/icon_1_lg.gif",
                           waiver_priority: 2,
@@ -404,8 +400,7 @@ yf.teams.league(
                           team_key: "328.l.34014.t.4",
                           team_id: "4",
                           name: "Jose Abreu",
-                          url:
-                            "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/4",
+                          url: "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/4",
                           team_logo:
                             "http://l.yimg.com/dh/ap/fantasy/img/mlb/icon_1_lg.gif",
                           waiver_priority: 10,
@@ -442,8 +437,7 @@ yf.teams.league(
                           team_key: "328.l.34014.t.5",
                           team_id: "5",
                           name: "The Beetle Bunch",
-                          url:
-                            "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/5",
+                          url: "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/5",
                           team_logo:
                             "http://l.yimg.com/dh/ap/fantasy/img/mlb/icon_11_lg.gif",
                           waiver_priority: 6,
@@ -480,8 +474,7 @@ yf.teams.league(
                           team_key: "328.l.34014.t.6",
                           team_id: "6",
                           name: "Deep In To The Night",
-                          url:
-                            "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/6",
+                          url: "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/6",
                           team_logo:
                             "http://l.yimg.com/dh/ap/fantasy/img/profile_96.png",
                           waiver_priority: 7,
@@ -517,8 +510,7 @@ yf.teams.league(
                           team_key: "328.l.34014.t.7",
                           team_id: "7",
                           name: "TNTNT",
-                          url:
-                            "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/7",
+                          url: "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/7",
                           team_logo:
                             "http://l.yimg.com/dh/ap/fantasy/img/mlb/icon_1_lg.gif",
                           waiver_priority: 11,
@@ -555,8 +547,7 @@ yf.teams.league(
                           team_key: "328.l.34014.t.8",
                           team_id: "8",
                           name: "Bronx Bombers",
-                          url:
-                            "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/8",
+                          url: "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/8",
                           team_logo:
                             "http://l.yimg.com/dh/ap/fantasy/img/profile_96.png",
                           waiver_priority: 5,
@@ -592,8 +583,7 @@ yf.teams.league(
                           team_key: "328.l.34014.t.9",
                           team_id: "9",
                           name: "You Down With OBP?",
-                          url:
-                            "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/9",
+                          url: "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/9",
                           team_logo:
                             "http://l.yimg.com/dh/ap/fantasy/img/mlb/icon_1_lg.gif",
                           waiver_priority: 3,
@@ -629,8 +619,7 @@ yf.teams.league(
                           team_key: "328.l.34014.t.10",
                           team_id: "10",
                           name: "Jays of Thunder",
-                          url:
-                            "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/10",
+                          url: "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/10",
                           team_logo:
                             "http://l.yimg.com/dh/ap/fantasy/img/mlb/icon_4_lg.gif",
                           waiver_priority: 9,
@@ -667,8 +656,7 @@ yf.teams.league(
                           team_key: "328.l.34014.t.11",
                           team_id: "11",
                           name: "BaseOnBalls",
-                          url:
-                            "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/11",
+                          url: "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/11",
                           team_logo:
                             "http://l.yimg.com/dh/ap/fantasy/img/mlb/icon_12_lg.gif",
                           waiver_priority: 1,
@@ -705,8 +693,7 @@ yf.teams.league(
                           team_key: "328.l.34014.t.12",
                           team_id: "12",
                           name: "Nino Something",
-                          url:
-                            "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/12",
+                          url: "http://baseball.fantasysports.yahoo.com/archive/mlb/2014/34014/12",
                           team_logo:
                             "http://l.yimg.com/dh/ap/fantasy/img/mlb/icon_10_lg.gif",
                           waiver_priority: 12,

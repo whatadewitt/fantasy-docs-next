@@ -56,7 +56,7 @@ const League = () => (
         </div>
         <div className={appStyles.row}>
           <div>
-            <Link href="/resource/leagueg/teams">league.teams</Link>
+            <Link href="/resource/league/teams">league.teams</Link>
           </div>
           <div>Retrieve information about the teams in a specific league</div>
         </div>
