@@ -1,5 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-const YahooFantasy = require("yahoo-fantasy");
+// const YahooFantasy = require("yahoo-fantasy");
+import YahooFantasy from "yahoo-fantasy";
 const request = require("request");
 
 export default (req, res) => {

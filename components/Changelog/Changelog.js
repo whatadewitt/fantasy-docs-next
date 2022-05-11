@@ -4,6 +4,20 @@ const Changelog = () => {
   return (
     <>
       <h2>Changelog</h2>
+      <h4>5.0.0</h4>
+      <ul>
+        <li>
+          My NextJS docs site was giving me grief about ESM/CJS imports so I
+          made some changes that should work for whatever import method you want
+          to use
+        </li>
+        <li>
+          Updated the `mapScoreboard` function that is used by the league
+          resource to simplify the `stat_winners` array to show the winning
+          `stat_id` and `team_key` (or `is_tied`), rather than having them
+          nested inside a `stat_winner` object
+        </li>
+      </ul>
       <h4>4.2.0</h4>
       <ul>
         <li>

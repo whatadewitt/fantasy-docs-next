@@ -1,4 +1,5 @@
-const YahooFantasy = require("yahoo-fantasy");
+// const YahooFantasy = require("yahoo-fantasy");
+import YahooFantasy from "yahoo-fantasy";
 
 export default async (req, res) => {
   const yf = new YahooFantasy(

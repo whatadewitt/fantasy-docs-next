@@ -1,6 +1,7 @@
 import { serialize } from "cookie";
 
-const YahooFantasy = require("yahoo-fantasy");
+// const YahooFantasy = require("yahoo-fantasy");
+import YahooFantasy from "yahoo-fantasy";
 const request = require("request");
 
 export default (req, res) => {

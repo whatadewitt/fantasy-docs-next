@@ -1,6 +1,6 @@
 {
   "name": "yahoo-docs-next",
-  "version": "4.2.0",
+  "version": "5.0.0",
   "private": true,
   "scripts": {
     "dev:local": "NODE_OPTIONS='--inspect' node server.js",
@@ -24,7 +24,7 @@
     "react-syntax-highlighter": "^15.2.1",
     "request": "^2.88.2",
     "sass": "^1.27.0",
-    "yahoo-fantasy": "^4.2.0"
+    "yahoo-fantasy": "^5.0.0"
   },
   "devDependencies": {
     "babel-plugin-inline-react-svg": "^2.0.1"
