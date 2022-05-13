@@ -4,6 +4,14 @@ const Changelog = () => {
   return (
     <>
       <h2>Changelog</h2>
+      <h4>5.1.0</h4>
+      <ul>
+        <li>
+          Cleaned up the user.game_leagues function to have the game.league
+          array be an array of objects instead of an array of a single array
+          holding an object (which was just weird and bad).
+        </li>
+      </ul>
       <h4>5.0.0</h4>
       <ul>
         <li>
