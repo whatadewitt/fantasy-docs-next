@@ -34,7 +34,7 @@ const Players = () => (
         </div>
         <div className={appStyles.row}>
           <div>
-            <Link href="/collection/players/league">players.league</Link>
+            <Link href="/collection/players/leagues">players.leagues</Link>
           </div>
           <div>
             Retrieve information about multiple players across multiple leagues
