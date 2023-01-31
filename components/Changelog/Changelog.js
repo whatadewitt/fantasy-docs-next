@@ -4,6 +4,21 @@ const Changelog = () => {
   return (
     <>
       <h2>Changelog</h2>
+      <h4>5.2.0</h4>
+      <ul>
+        <li>
+          Add support for `lastweek` and `lastmonth` as arguments in
+          `player.stats` resource (Thanks to{" "}
+          <a
+            href="https://github.com/nosecreek"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            nosecreek
+          </a>
+          !)
+        </li>
+      </ul>
       <h4>5.1.0</h4>
       <ul>
         <li>

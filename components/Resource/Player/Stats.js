@@ -111,6 +111,10 @@ const PlayerStats = () => {
                 API will get the players' stats for that week if the game is
                 setup with weekly scoring.
               </div>
+              <div>
+                Since 5.2.0 you can also use 'lastweek' or 'lastmonth' for the
+                date field.
+              </div>
             </div>
           </div>
 
