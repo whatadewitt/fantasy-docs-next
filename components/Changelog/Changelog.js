@@ -4,6 +4,10 @@ const Changelog = () => {
   return (
     <>
       <h2>Changelog</h2>
+      <h4>5.2.1</h4>
+      <ul>
+        <li>Dependabot alert fixes.</li>
+      </ul>
       <h4>5.2.0</h4>
       <ul>
         <li>
