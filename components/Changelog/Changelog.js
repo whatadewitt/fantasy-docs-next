@@ -4,6 +4,13 @@ const Changelog = () => {
   return (
     <>
       <h2>Changelog</h2>
+      <h4>5.2.2</h4>
+      <ul>
+        <li>
+          Fixed a bug where transactions somehow didn't have players and would
+          cause a crash.
+        </li>
+      </ul>
       <h4>5.2.1</h4>
       <ul>
         <li>Dependabot alert fixes.</li>
