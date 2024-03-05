@@ -2,9 +2,17 @@
 import YahooFantasy from "yahoo-fantasy";
 
 export default async (req, res) => {
+  const testRefreshFunction = (tokendata) => {
+    console.log("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+    console.log("REFRESHED TOKEN");
+    console.log(tokendata);
+    // const tokenData = "TOKEN DATA GOES HURRRRRR"
+  };
+
   const yf = new YahooFantasy(
     process.env.YAHOO_CLIENT_ID,
-    process.env.YAHOO_CLIENT_SECRET
+    process.env.YAHOO_CLIENT_SECRET,
+    testRefreshFunction
   );
   const {
     query: { slug },
@@ -16,8 +24,17 @@ export default async (req, res) => {
     .split("; ")
     .find((c) => c.startsWith("accessToken"));
 
+  const refreshTokenCookie = req.headers?.cookie
+    .split("; ")
+    .find((c) => c.startsWith("refreshToken"));
+  console.log(accessTokenCookie);
+
   if (accessTokenCookie) {
     yf.setUserToken(accessTokenCookie.split("=")[1]);
+  }
+
+  if (refreshTokenCookie) {
+    yf.setRefreshToken(refreshTokenCookie.split("=")[1]);
   }
 
   if (slug.length < 2) {
