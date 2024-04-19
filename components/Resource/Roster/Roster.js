@@ -31,9 +31,18 @@ const Game = () => (
         </div>
         <div className={appStyles.row}>
           <div>
-            <Link href="/resource/roster/players">roster.players</Link>
+            <Link href="/resource/roster/fetch">roster.fetch</Link>
           </div>
           <div>Retrieve the list of players on a specific team.</div>
+        </div>
+        <div className={appStyles.row}>
+          <div>
+            <Link href="/resource/roster/players">roster.players</Link>
+          </div>
+          <div>
+            Retrieve the list of players on a specific team with optional
+            subresources.
+          </div>
         </div>
       </div>
     </div>

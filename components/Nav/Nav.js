@@ -349,6 +349,15 @@ const Nav = ({ show }) => {
               >
                 <li
                   className={cx({
+                    [styles.active]: new RegExp("/resource/roster/fetch").test(
+                      pathname
+                    ),
+                  })}
+                >
+                  <Link href="/resource/roster/fetch">Fetch</Link>
+                </li>
+                <li
+                  className={cx({
                     [styles.active]: new RegExp(
                       "/resource/roster/players"
                     ).test(pathname),

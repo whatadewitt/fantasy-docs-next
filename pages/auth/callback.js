@@ -16,7 +16,6 @@ export default function Main() {
   const { dispatch } = useContext(Context);
 
   useEffect(() => {
-    console.log(query);
     if (query.code) {
       let params = `code=${query.code}`;
 

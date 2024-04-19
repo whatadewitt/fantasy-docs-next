@@ -7,7 +7,7 @@ import Tabs from "../../Tabs/Tabs";
 import { api } from "../../../services/api";
 import CodeBlock from "../../CodeBlock/CodeBlock";
 
-const RosterPlayers = () => {
+const RosterFetch = () => {
   const [activeTab, setActiveTab] = useState("description");
   const [response, setResponse] = useState(null);
 
@@ -15,7 +15,6 @@ const RosterPlayers = () => {
   const [teamKeyError, setTeamKeyError] = useState(false);
 
   const [date, setDate] = useState(null);
-  const [subresource, setSubresource] = useState(null);
 
   const [loading, setLoading] = useState(false);
 
@@ -37,7 +36,6 @@ const RosterPlayers = () => {
     const data = await api("/roster/players", {
       teamKey,
       date,
-      subresource,
     });
 
     setResponse(data);
@@ -55,41 +53,15 @@ const RosterPlayers = () => {
 
   return (
     <>
-      <h2 className={cx(appStyles.public, appStyles.private)}>
-        roster.players
-      </h2>
+      <h2 className={cx(appStyles.public, appStyles.private)}>roster.fetch</h2>
       <p>
         Access the players collection within the roster. Users must be
         authenticated and a member of the league to query against private
         leagues.
       </p>
       <p>
-        For the purposes of this API, we only ever query the base "roster"
-        resource, but use the "players" subresource to keep things consistent
-        with the rest of the code.
-      </p>
-      <p>
-        In version 4.1.0, the ability to add an optional parameter for "date"
-        was added. Per the{" "}
-        <a
-          href="https://developer.yahoo.com/fantasysports/guide/roster-resource.html#roster-resource-desc"
-          title="Yahoo! Fantasy API documentation"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          API docs
-        </a>
-        , this can be either a week or specific day. The API allows you to
-        specify a week number (NFL), or a string of format 'YYYY-MM-DD' to
-        retrieve a team's roster on a specific date (MLB, NHL, NBA).
-      </p>
-      <p>
-        In version 5.3.0, this was split from the roster.fetch resource to allow
-        for an optional subresources to be queried. You may specify an optional
-        subresource to get additional insights into a team roster. You can only
-        specify one at a time and it must be one of stats, percent_owned,
-        ownership, or draft_analysis (note: for all but stats, the date field
-        may be ignored).
+        In version 5.3.0, this was split from the roster.players resource to
+        make a straight query for the roster players.
       </p>
 
       <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
@@ -143,84 +115,6 @@ const RosterPlayers = () => {
                 the roster for that week.
               </div>
             </div>
-
-            <div className={cx(appStyles.table, appStyles.subresource)}>
-              <div className={cx(appStyles.header, appStyles.row)}>
-                <div>Subresource</div>
-                {activeTab === "tester" && <div>Select</div>}
-                <div>Description</div>
-              </div>
-              <div className={appStyles.row}>
-                <div className={cx(appStyles.arg, appStyles.subresource)}>
-                  stats
-                </div>
-                {activeTab === "tester" && (
-                  <div>
-                    <input
-                      className={appStyles.value}
-                      type="radio"
-                      name="subresource"
-                      value="stats"
-                      onChange={(e) => setSubresource("stats")}
-                    />
-                  </div>
-                )}
-                <div>Retrieve the stats for the retrieved players.</div>
-              </div>
-              <div className={appStyles.row}>
-                <div className={cx(appStyles.arg, appStyles.subresource)}>
-                  ownership
-                </div>
-                {activeTab === "tester" && (
-                  <div>
-                    <input
-                      className={appStyles.value}
-                      type="radio"
-                      name="subresource"
-                      value="ownership"
-                      onChange={(e) => setSubresource("ownership")}
-                    />
-                  </div>
-                )}
-                <div>Retrieve the ownership for the retrieved players.</div>
-              </div>
-              <div className={appStyles.row}>
-                <div className={cx(appStyles.arg, appStyles.subresource)}>
-                  percent_owned
-                </div>
-                {activeTab === "tester" && (
-                  <div>
-                    <input
-                      className={appStyles.value}
-                      type="radio"
-                      name="subresource"
-                      value="percent_owned"
-                      onChange={(e) => setSubresource("percent_owned")}
-                    />
-                  </div>
-                )}
-                <div>Retrieve the percent_owned for the retrieved players.</div>
-              </div>
-              <div className={appStyles.row}>
-                <div className={cx(appStyles.arg, appStyles.subresource)}>
-                  draft_analysis
-                </div>
-                {activeTab === "tester" && (
-                  <div>
-                    <input
-                      className={appStyles.value}
-                      type="radio"
-                      name="subresource"
-                      value="draft_analysis"
-                      onChange={(e) => setSubresource("draft_analysis")}
-                    />
-                  </div>
-                )}
-                <div>
-                  Retrieve the draft_analysis for the retrieved players.
-                </div>
-              </div>
-            </div>
           </div>
 
           {activeTab === "tester" && (
@@ -269,20 +163,18 @@ yf.setUserToken(
 
 // promise based
 try {
-  const stats = await yf.roster.players(
+  const stats = await yf.roster.fetch(
     player_key,
     date // optional
-    subresource // optional
   );
 } catch (e) {
   // handle error
 }
 
 // callback based
-yf.roster.players(
+yf.roster.fetch(
   player_key, 
   date, // optional
-  subresource // optional
   callbackFn
 );`}</CodeBlock>
             </div>
@@ -820,4 +712,4 @@ yf.roster.players(
   );
 };
 
-export default RosterPlayers;
+export default RosterFetch;

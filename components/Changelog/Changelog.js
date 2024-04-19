@@ -4,6 +4,21 @@ const Changelog = () => {
   return (
     <>
       <h2>Changelog</h2>
+      <h4>5.3.0</h4>
+
+      <ul>
+        <li>
+          Split the roster resource into 2 functions (which was avoided in the
+          past). `roster.fetch` will work the same as `roster.players` always
+          has. `roster.players` will be backwards compatible but will now allow
+          an optional additional "subresource" parameter that return additional
+          information about the roster being queried.
+        </li>
+        <li>Removed unused and undocumented "filter" checks on games.fetch</li>
+        <li>Cleaned up mapPlayer function in playerHelpers</li>
+        <li>Added resourceHelper file for roster changes</li>
+        <li>Minor code cleanup</li>
+      </ul>
       <h4>5.2.2</h4>
       <ul>
         <li>
