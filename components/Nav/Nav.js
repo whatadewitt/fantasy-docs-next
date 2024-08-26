@@ -758,6 +758,7 @@ const Nav = ({ show }) => {
               title="Authenticate with Yahoo!"
               rel="noopener noreferrer"
               passHref
+              legacyBehavior
             >
               <a className={cx(styles.button, styles.login)}>
                 <Trophy />
