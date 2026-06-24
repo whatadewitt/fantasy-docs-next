@@ -31,6 +31,6 @@
     "babel-plugin-inline-react-svg": "^2.0.2"
   },
   "engines": {
-    "node": "16.x"
+    "node": "22.x"
   }
 }
