@@ -4,6 +4,51 @@ const Changelog = () => {
   return (
     <>
       <h2>Changelog</h2>
+      <h4>5.4.0</h4>
+      <ul>
+        <li>
+          `mapTeamPoints` now returns `team_remaining_games` when available.
+        </li>
+        <li>Fixed `roster.players(teamKey)` building a malformed url.</li>
+        <li>Fixed a crash when passing a week or date as a number.</li>
+        <li>
+          Replaced the oauth-signature dependency with OAuth 1.0a signing built
+          on node's own crypto.
+        </li>
+        <li>
+          Removed the unused uuid and follow-redirects dependencies. esm is now
+          the only runtime dependency.
+        </li>
+        <li>
+          Upgraded nock and jasmine, taking npm audit to zero vulnerabilities.
+        </li>
+        <li>Added CI so the test suite runs on every pull request.</li>
+      </ul>
+      <h4>5.3.1</h4>
+      <ul>
+        <li>
+          Fixed `league.scoreboard.week` coming back undefined when a
+          scoreboard was fetched through the leagues collection.
+          `mapScoreboard` now reads the week from the scoreboard itself, so the
+          collection and resource paths both report it. Thanks to{" "}
+          <a
+            href="https://github.com/bensynapse"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            bensynapse
+          </a>{" "}
+          (
+          <a
+            href="https://github.com/whatadewitt/yahoo-fantasy-sports-api/pull/136"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            #136
+          </a>
+          )!
+        </li>
+      </ul>
       <h4>5.3.0</h4>
 
       <ul>
