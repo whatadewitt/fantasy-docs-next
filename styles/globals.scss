@@ -55,6 +55,16 @@ pre {
     monospace;
 }
 
+:not(pre) > code {
+  background: $grey;
+  color: $primary-dark;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  font-size: 0.875em;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
 strong {
   font-weight: 700;
 }

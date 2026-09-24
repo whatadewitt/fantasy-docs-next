@@ -7,16 +7,20 @@ const Changelog = () => {
       <h4>5.4.1</h4>
       <ul>
         <li>
-          `team.stats()` now returns `team.points` alongside `team.stats`,
-          matching every other path that maps team stats.
+          <code>team.stats()</code> now returns <code>team.points</code>{" "}
+          alongside <code>team.stats</code>, matching every other path that maps
+          team stats.
         </li>
       </ul>
       <h4>5.4.0</h4>
       <ul>
         <li>
-          `mapTeamPoints` now returns `team_remaining_games` when available.
+          <code>mapTeamPoints</code> now returns{" "}
+          <code>team_remaining_games</code> when available.
         </li>
-        <li>Fixed `roster.players(teamKey)` building a malformed url.</li>
+        <li>
+          Fixed <code>roster.players(teamKey)</code> building a malformed url.
+        </li>
         <li>Fixed a crash when passing a week or date as a number.</li>
         <li>
           Replaced the oauth-signature dependency with OAuth 1.0a signing built
@@ -34,10 +38,11 @@ const Changelog = () => {
       <h4>5.3.1</h4>
       <ul>
         <li>
-          Fixed `league.scoreboard.week` coming back undefined when a
-          scoreboard was fetched through the leagues collection.
-          `mapScoreboard` now reads the week from the scoreboard itself, so the
-          collection and resource paths both report it. Thanks to{" "}
+          Fixed <code>league.scoreboard.week</code> coming back{" "}
+          <code>undefined</code> when a scoreboard was fetched through the
+          leagues collection. <code>mapScoreboard</code> now reads the week from
+          the scoreboard itself, so the collection and resource paths both
+          report it. Thanks to{" "}
           <a
             href="https://github.com/bensynapse"
             target="_blank"
@@ -61,14 +66,23 @@ const Changelog = () => {
       <ul>
         <li>
           Split the roster resource into 2 functions (which was avoided in the
-          past). `roster.fetch` will work the same as `roster.players` always
-          has. `roster.players` will be backwards compatible but will now allow
-          an optional additional "subresource" parameter that return additional
-          information about the roster being queried.
+          past). <code>roster.fetch</code> will work the same as{" "}
+          <code>roster.players</code> always has. <code>roster.players</code>{" "}
+          will be backwards compatible but will now allow an optional additional
+          "subresource" parameter that return additional information about the
+          roster being queried.
         </li>
-        <li>Removed unused and undocumented "filter" checks on games.fetch</li>
-        <li>Cleaned up mapPlayer function in playerHelpers</li>
-        <li>Added resourceHelper file for roster changes</li>
+        <li>
+          Removed unused and undocumented "filter" checks on{" "}
+          <code>games.fetch</code>
+        </li>
+        <li>
+          Cleaned up <code>mapPlayer</code> function in{" "}
+          <code>playerHelpers</code>
+        </li>
+        <li>
+          Added <code>resourceHelper</code> file for roster changes
+        </li>
         <li>Minor code cleanup</li>
       </ul>
       <h4>5.2.2</h4>
@@ -85,8 +99,8 @@ const Changelog = () => {
       <h4>5.2.0</h4>
       <ul>
         <li>
-          Add support for `lastweek` and `lastmonth` as arguments in
-          `player.stats` resource (Thanks to{" "}
+          Add support for <code>lastweek</code> and <code>lastmonth</code> as
+          arguments in <code>player.stats</code> resource (Thanks to{" "}
           <a
             href="https://github.com/nosecreek"
             target="_blank"
@@ -100,9 +114,10 @@ const Changelog = () => {
       <h4>5.1.0</h4>
       <ul>
         <li>
-          Cleaned up the user.game_leagues function to have the game.league
-          array be an array of objects instead of an array of a single array
-          holding an object (which was just weird and bad).
+          Cleaned up the <code>user.game_leagues</code> function to have the{" "}
+          <code>game.league</code> array be an array of objects instead of an
+          array of a single array holding an object (which was just weird and
+          bad).
         </li>
       </ul>
       <h4>5.0.0</h4>
@@ -113,10 +128,11 @@ const Changelog = () => {
           to use
         </li>
         <li>
-          Updated the `mapScoreboard` function that is used by the league
-          resource to simplify the `stat_winners` array to show the winning
-          `stat_id` and `team_key` (or `is_tied`), rather than having them
-          nested inside a `stat_winner` object
+          Updated the <code>mapScoreboard</code> function that is used by the
+          league resource to simplify the <code>stat_winners</code> array to
+          show the winning <code>stat_id</code> and <code>team_key</code> (or{" "}
+          <code>is_tied</code>), rather than having them nested inside a{" "}
+          <code>stat_winner</code> object
         </li>
       </ul>
       <h4>4.2.0</h4>
@@ -126,14 +142,14 @@ const Changelog = () => {
           working.
         </li>
         <li>
-          Updated the `player.stats` function to accept a week OR a date (format
-          `yyyy-mm-dd`) as the 2nd param
+          Updated the <code>player.stats</code> function to accept a week OR a
+          date (format <code>yyyy-mm-dd</code>) as the 2nd param
         </li>
         <li>
           Fixed a bug that would cause the function to fail silently if trying
-          to request stats for a given `week` for players outside of the NFL
-          (for this you can just get the weeks from the game settings and make
-          multiple queries for each day of the week).
+          to request stats for a given <code>week</code> for players outside of
+          the NFL (for this you can just get the weeks from the game settings
+          and make multiple queries for each day of the week).
         </li>
         <li>
           Fixes{" "}
@@ -212,8 +228,9 @@ const Changelog = () => {
       <h4>4.1.3</h4>
       <ul>
         <li>
-          Fixed a bug where Yahoo! apparently no longer requires `;type=week`
-          when building a URL for team.stats and player.stats, leading to no
+          Fixed a bug where Yahoo! apparently no longer requires{" "}
+          <code>;type=week</code> when building a URL for{" "}
+          <code>team.stats</code> and <code>player.stats</code>, leading to no
           stats coming back for those resources (
           <a
             href="https://github.com/whatadewitt/yahoo-fantasy-sports-api/issues/70"
@@ -262,27 +279,32 @@ const Changelog = () => {
           changes, but I haven't been able to find any yet...
         </li>
         <li>
-          the authCallback() function will now return an object with the user's
-          access_token and refresh_token
+          the <code>authCallback()</code> function will now return an object
+          with the user's <code>access_token</code> and{" "}
+          <code>refresh_token</code>
         </li>
         <li>
-          the auth() function will accept a "state" string, allowing for state
-          persistence through the authentication process
-        </li>
-        <li>re-enabled the transactions.fetch() collection call</li>
-        <li>
-          cleaned up the "wavier_days" and "stat_categories" objects on league
-          resources
+          the <code>auth()</code> function will accept a "state" string,
+          allowing for state persistence through the authentication process
         </li>
         <li>
-          added deprecation warnings to the game.leagues and game.players
-          functions as they're not very useful in that context
+          re-enabled the <code>transactions.fetch()</code> collection call
+        </li>
+        <li>
+          cleaned up the <code>wavier_days</code> and{" "}
+          <code>stat_categories</code> objects on league resources
+        </li>
+        <li>
+          added deprecation warnings to the <code>game.leagues</code> and{" "}
+          <code>game.players</code> functions as they're not very useful in that
+          context
         </li>
       </ul>
       <h4>4.0.0</h4>
       <ul>
         <li>
-          Added auth(), authCallback, setRefreshToken() functions to the library
+          Added <code>auth()</code>, <code>authCallback</code>,{" "}
+          <code>setRefreshToken()</code> functions to the library
         </li>
         <li>
           Automatically handle refreshing of the token and call a user defined
@@ -327,8 +349,8 @@ const Changelog = () => {
       <h4>3.1.0</h4>
       <ul>
         <li>
-          Introduced `promise` based flow for all endpoints as an alternative to
-          callbacks. (Thanks{" "}
+          Introduced <code>promise</code> based flow for all endpoints as an
+          alternative to callbacks. (Thanks{" "}
           <a
             href="https://github.com/ryus08"
             target="_blank"
@@ -343,8 +365,8 @@ const Changelog = () => {
       <h4>3.0.4</h4>
       <ul>
         <li>
-          Fixed a bug in the players.league collection call where it was trying
-          to use split on an array... (
+          Fixed a bug in the <code>players.league</code> collection call where
+          it was trying to use split on an array... (
           <a
             href="https://github.com/whatadewitt/yfsapi/pull/46"
             target="_blank"
@@ -425,8 +447,8 @@ const Changelog = () => {
       <h4>2.0.2</h4>
       <ul>
         <li>
-          Fixed a bug where "mapTeamPoints" helper function was not defining
-          "self". Thanks{" "}
+          Fixed a bug where <code>mapTeamPoints</code> helper function was not
+          defining "self". Thanks{" "}
           <a
             href="https://github.com/platky"
             target="_blank"
@@ -477,14 +499,15 @@ const Changelog = () => {
           In fixing this bug I realized that my "team" set up was really only
           useful for MLB fantasy, so I rewrote team mapping to work better
           across all sports and give additional details that weren't previously
-          reported. This will cause errors if you are using the team.manager
-          attribute in your code.
+          reported. This will cause errors if you are using the{" "}
+          <code>team.manager</code> attribute in your code.
         </li>
       </ul>
       <h4>0.5.3</h4>
       <ul>
         <li>
-          Fixed a bug where leagueFetch was throwing an error, thanks{" "}
+          Fixed a bug where <code>leagueFetch</code> was throwing an error,
+          thanks{" "}
           <a
             href="https://github.com/danielspector"
             target="_blank"
@@ -521,14 +544,21 @@ const Changelog = () => {
       <ul>
         <li>
           Added "Transactions" collection with functionality to add players,
-          drop players, and add/drop players, thanks again
-          [githubsmilo](https://github.com/githubsmilo)!
+          drop players, and add/drop players, thanks again{" "}
+          <a
+            href="https://github.com/githubsmilo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            githubsmilo
+          </a>
+          !
         </li>
       </ul>
       <h4>0.4.4</h4>
       <ul>
         <li>
-          Fixed a bug in player.draft_analysis, thanks{" "}
+          Fixed a bug in <code>player.draft_analysis</code>, thanks{" "}
           <a
             href="https://github.com/githubsmilo"
             target="_blank"
@@ -541,8 +571,12 @@ const Changelog = () => {
       </ul>
       <h4>0.4.3</h4>
       <ul>
-        <li>Added weeks param for league.scoreboard</li>
-        <li>Added weeks param for team.matchups</li>
+        <li>
+          Added weeks param for <code>league.scoreboard</code>
+        </li>
+        <li>
+          Added weeks param for <code>team.matchups</code>
+        </li>
         <li>Fixed a bug where individual players weren't mapping properly</li>
         <li>Minor code cleanup</li>
       </ul>
@@ -553,7 +587,9 @@ const Changelog = () => {
           resource.
         </li>
         <li>Cleaned up the player normalization model</li>
-        <li>Fixed a bug where the team.roster call was erroring</li>
+        <li>
+          Fixed a bug where the <code>team.roster</code> call was erroring
+        </li>
       </ul>
       <h4>0.4.1</h4>
       <ul>
