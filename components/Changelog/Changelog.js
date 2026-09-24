@@ -4,6 +4,13 @@ const Changelog = () => {
   return (
     <>
       <h2>Changelog</h2>
+      <h4>5.4.1</h4>
+      <ul>
+        <li>
+          `team.stats()` now returns `team.points` alongside `team.stats`,
+          matching every other path that maps team stats.
+        </li>
+      </ul>
       <h4>5.4.0</h4>
       <ul>
         <li>
